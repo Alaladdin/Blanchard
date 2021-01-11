@@ -1,0 +1,120 @@
+@import 'mixins/hover';
+
+.section {
+  &-title {
+    padding-top: 85px;
+    font-weight: 400;
+    font-size: 3rem;
+    color: var(--dark);
+  }
+
+  &-desc {
+    padding-top: 20px;
+    max-width: 1080px;
+    line-height: 2;
+  }
+}
+
+.login-link {
+  font-size: 1.125rem;
+  color: var(--white, #fff);
+}
+
+.text {
+  &-purple {
+    color: var(--purple, #9d5cd0);
+  }
+
+  &-light {
+    color: var(--white, #fff);
+  }
+
+  &-gray {
+    color: var(--gray, #999);
+  }
+}
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: max-content;
+
+  &__icon {
+    margin-right: 5px;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+
+    background-image: url('../icon/search.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__input {
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--white, #fff);
+    min-width: 222px;
+    color: var(--white, #fff);
+    font-size: 18px;
+
+    &::placeholder {
+      color: var(--white, #fff);
+    }
+  }
+}
+
+// Filter
+.filter {
+  user-select: none;
+  &__desc {
+    font-weight: 600;
+  }
+
+  &__header,
+  &__option {
+    cursor: pointer;
+    transition: 60ms all;
+    transition-property: border-color, color, background, transform;
+
+    @include hover {
+      border-color: var(--white);
+      color: var(--white);
+      background: rgba(0, 0, 0, .5);
+    }
+  }
+
+  &__header {
+    padding: 10px 15px;
+    margin: 16px 0 -1px;
+    border: 1px solid #fff;
+    border-radius: 6px;
+  }
+
+  &__body {
+    margin: 0;
+    border-color: var(--gray);
+    color: var(--gray);
+  }
+
+  &__option {
+    padding: 10px 20px;
+    border: 1px solid var(--gray);
+    margin-bottom: -1px;
+
+    &:first-child {
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+
+    @include hover {
+      transform: scale(1.005);
+    }
+  }
+}
