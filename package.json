@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "browser-sync --server --watch"
+    "watch": "live-server --no-browser"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.13"
+    "live-server": "^1.2.1"
   }
 }
