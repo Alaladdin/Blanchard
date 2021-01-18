@@ -74,7 +74,7 @@
         margin-left: 4px;
         height: 12px;
         width: 12px;
-        background-image: url('../icon/arrow-down.svg');
+        background-image: url('../icon/dropdown-arrow-down.svg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -212,5 +212,38 @@
     margin-bottom: -11px;
     max-width: 360px;
     line-height: 32px;
+  }
+}
+
+.catalog {
+
+  &__container {
+    &--bottom {
+      display: flex;
+      padding-top: 35px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 85px;
+  }
+
+  &__desc {
+    padding-top: 10px;
+  }
+
+  &__title {
+    padding: 0;
+    margin-right: 30px;
+  }
+
+  &__personality {
+    max-width: 750px;
+  }
+
+  &__accordion {
+    margin: 0 0 0 45px;
   }
 }

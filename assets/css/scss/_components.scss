@@ -68,6 +68,7 @@
 // Filter
 .filter {
   user-select: none;
+
   &__desc {
     font-weight: 600;
   }
@@ -117,4 +118,182 @@
       transform: scale(1.005);
     }
   }
+}
+
+.language-picker {
+  display: flex;
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
+  &__img {
+    padding: 8px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: .2s border-color;
+    user-drag: none;
+
+    &:hover {
+      border-color: var(--gray-light);
+    }
+  }
+
+  &__input:checked + &__img {
+    border-color: var(--purple);
+  }
+
+  // @todo create animation via ::after onn selected item (border animation)
+}
+
+.personality {
+  &__avatar {
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+
+  &__name {
+    margin-bottom: 15px;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  &__date {
+    margin-bottom: 8px;
+    color: var(--gray-light);
+    font-size: 0.75rem;
+  }
+
+  &__desc {
+
+    line-height: 2rem;
+  }
+}
+
+// Accordion //- @todo fix
+.accordion {
+  width: 100%;
+  overflow: hidden;
+
+  &__item {
+    position: relative;
+    border-bottom: 1px solid #cacaca;
+
+    &:first-child {
+      border-top: 1px solid #cacaca;
+    }
+
+    &--opened {
+      border-bottom-color: var(--purple);
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      height: 1px;
+      width: 100%;
+      background: var(--dark);
+      transform: translateX(-100%);
+      transition: .3s transform;
+    }
+
+    &:focus::before,
+    &:hover:not(&--opened)::before {
+      transform: translateX(0);
+    }
+
+  }
+
+
+  &__btn {
+    position: relative;
+    padding: 44px 0;
+    width: 100%;
+    border-bottom: 1px solid transparent;
+    font-size: 1.5rem;
+    text-align: left;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      margin: auto;
+
+      right: 0;
+      top: 0;
+      bottom: 0;
+
+      width: 50px;
+      height: 50px;
+      opacity: .5;
+
+      background: url('../icon/arrow-down.svg') center no-repeat;
+      background-size: cover;
+
+      cursor: pointer;
+      transition: .3s all;
+      transition-property: transform, opacity;
+    }
+  }
+
+  &__item--opened &__btn {
+    border-bottom-color: var(--purple);
+
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__btn:focus::after,
+  &__btn:hover::after,
+  &__item--opened &__btn::after {
+    opacity: 1;
+  }
+
+  &__body {
+    flex-wrap: wrap;
+    //height: auto;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: .2s all;
+    transition-property: max-height;
+  }
+
+  &__item--opened &__body {
+    padding: 20px 0;
+    max-height: 300px;
+  }
+
+
+  &__option {
+    display: inline-flex;
+    flex-wrap: wrap;
+    width: 30%;
+    text-align: left;
+    cursor: pointer;
+    transition: .2s color;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    &:hover,
+    &--selected {
+      color: var(--purple);
+    }
+
+    &--selected {
+      font-weight: 600;
+    }
+  }
+
 }

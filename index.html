@@ -142,7 +142,8 @@
                         <div class='gallery__navigation'>
                             <button class='gallery__btn-prev'></button>
                             <span class='gallery__fraction'>
-                                <!-- 1 / 5 -->
+                                <!-- if js is disabled -->
+                                N / N
                             </span>
                             <button class='gallery__btn-next'></button>
                         </div>
@@ -246,35 +247,42 @@
                     </div>
                 </div>
             </section>
-            
+
             <!-- Catalog -->
             <section id='catalog' class='catalog'>
                 
                 <!-- Top -->
                 
                 <div class='container catalog__container catalog__container--top'>
-                    <h2 class='section-title catalog__title'>Каталог</h2>
-                    <ul class='language-picker'>
-                        <li class='language__item'>
-                            <img src='assets/icon/flag-fr.svg' alt='Флаг Франции'>
-                        </li>
-                        
-                        <li class='language__item'>
-                            <img src='assets/icon/flag-ge.svg' alt='Флаг Германии'>
-                        </li>
-                        
-                        <li class='language__item language__item--selected'>
-                            <img src='assets/icon/flag-it.svg' alt='Флаг Италии'>
-                        </li>
-                        
-                        <li class='language__item'>
-                            <img src='assets/icon/flag-ru.svg' alt='Флаг России'>
-                        </li>
-                        
-                        <li class='language__item'>
-                            <img src='assets/icon/flag-be.svg' alt='Флаг Бельгии'>
-                        </li>
-                    </ul>
+                    <div class='catalog__header'>
+                        <h2 class='section-title catalog__title'>Каталог</h2>
+                        <div class='language-picker catalog__language-picker'>
+                            <label class='language-picker__item'>
+                                <input type="radio" class='sry-only language-picker__input' data-lang='fr' name='catalog__lang'>
+                                <img src='assets/icon/flag-fr.svg' class='language-picker__img' alt='Флаг Франции' draggable='false'>
+                            </label>
+                            
+                            <label class='language-picker__item'>
+                                <input type="radio" class='sry-only language-picker__input' data-lang='ge' name='catalog__lang'>
+                                <img src='assets/icon/flag-ge.svg' class='language-picker__img' alt='Флаг Германии' draggable='false'>
+                            </label>
+                            
+                            <label class='language-picker__item'>
+                                <input type="radio" class='sry-only language-picker__input' data-lang='it' name='catalog__lang' checked>
+                                <img src='assets/icon/flag-it.svg' class='language-picker__img' alt='Флаг Италии' draggable='false'>
+                            </label>
+                            
+                            <label class='language-picker__item'>
+                                <input type="radio" class='sry-only language-picker__input' data-lang='ru' name='catalog__lang'>
+                                <img src='assets/icon/flag-ru.svg' class='language-picker__img' alt='Флаг России' draggable='false'>
+                            </label>
+                            
+                            <label class='language-picker__item'>
+                                <input type="radio" class='sry-only language-picker__input' data-lang='be' name='catalog__lang'>
+                                <img src='assets/icon/flag-be.svg' class='language-picker__img' alt='Флаг Бельгии' draggable='false'>
+                            </label>
+                        </div>
+                    </div>
                     <p class='section-desc catalog__desc'>Акционеры крупнейших компаний, которые представляют собой яркий пример
                                                           континентально-европейского типа политической культуры, будут объявлены нарушающими
                                                           общечеловеческие нормы этики и морали. Являясь всего лишь частью общей картины, стремящиеся
@@ -285,9 +293,8 @@
                 <!-- Bottom -->
                 
                 <div class='container catalog__container catalog__container--bottom'>
-                    
                     <!-- Personality -->
-                    <div class='personality'>
+                    <div class='personality catalog__personality'>
                         
                         <picture class='personality__avatar'>
                             <!-- <source media='(min-width:650px)' srcset='img_pink_flowers.jpg'> -->
@@ -296,7 +303,7 @@
                         </picture>
                         
                         <div class='personality__name'>Доменико Гирландайо</div>
-                        <div class='personality__date text-gray'>2 июня 1448 — 11 января 1494.</div>
+                        <div class='personality__date'>2 июня 1448 — 11 января 1494.</div>
                         <div class='personality__desc'>Один из ведущих флорентийских художников Кватроченто, основатель художественной династии,
                                                        которую продолжили его брат Давид и сын Ридольфо. Глава художественной мастерской, где юный
                                                        Микеланджело в течение года овладевал профессиональными навыками. Автор фресковых циклов, в
@@ -304,12 +311,13 @@
                                                        (в их роли выступают знатные граждане Флоренции в костюмах того времени).
                         </div>
                     </div>
-                    
-                    <ul class='accordion'>
+
+                    <!-- Accordion -->
+                    <ul class='accordion catalog__accordion'>
                         <!-- 1 -->
-                        <li class='accordion__item'>
+                        <li class='accordion__item accordion__item--opened'>
                             <button class='accordion__btn'>C 1400 по 1499 гг.</button>
-                            <div class='accordion__body accordion__body--opened'>
+                            <div class='accordion__body'>
                                 <button class='accordion__option'>Бенедетто ди Биндо</button>
                                 <button class='accordion__option'>Бергоньоне, Амброджо</button>
                                 <button class='accordion__option'>Биссоло, Франческо</button>
@@ -340,37 +348,37 @@
                         <!-- 2 -->
                         <li class='accordion__item'>
                             <button class='accordion__btn'>C 1500 по 1599 гг.</button>
-                            <div class='accordion__body'></div>
+                            <div class='accordion__body'>Have no content here</div>
                         </li>
                         
                         <!-- 3 -->
                         <li class='accordion__item'>
                             <button class='accordion__btn'>C 1600 по 1699 гг.</button>
-                            <div class='accordion__body'></div>
+                            <div class='accordion__body'>Have no content here</div>
                         </li>
                         
                         <!-- 4 -->
                         <li class='accordion__item'>
                             <button class='accordion__btn'>C 1700 по 1799 гг.</button>
-                            <div class='accordion__body'></div>
+                            <div class='accordion__body'>Have no content here</div>
                         </li>
                         
                         <!-- 5 -->
                         <li class='accordion__item'>
                             <button class='accordion__btn'>C 1800 по 1899 гг.</button>
-                            <div class='accordion__body'></div>
+                            <div class='accordion__body'>Have no content here</div>
                         </li>
                         
                         <!-- 6 -->
                         <li class='accordion__item'>
                             <button class='accordion__btn'>C 1900 по 1999 гг.</button>
-                            <div class='accordion__body'></div>
+                            <div class='accordion__body'>Have no content here</div>
                         </li>
                         
                         <!-- 7 -->
                         <li class='accordion__item'>
                             <button class='accordion__btn'>C 2000 г.</button>
-                            <div class='accordion__body'></div>
+                            <div class='accordion__body'>Have no content here</div>
                         </li>
                     
                     </ul>

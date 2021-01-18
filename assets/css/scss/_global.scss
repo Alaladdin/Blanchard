@@ -9,7 +9,8 @@ html, body {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-behavior: smooth;
+  //scroll-behavior: smooth;
+  color: var(--dark);
 }
 
 label {
