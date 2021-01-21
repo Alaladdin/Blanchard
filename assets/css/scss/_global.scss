@@ -2,15 +2,16 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
+  width: 100%;
   margin: 0;
   padding: 0;
-  width: 100%;
+  color: var(--dark);
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   //scroll-behavior: smooth;
-  color: var(--dark);
 }
 
 label {
@@ -25,7 +26,8 @@ button {
   font-family: 'Open Sans', sans-serif;
 }
 
-ul, ol {
+ul,
+ol {
   padding: 0;
   list-style: none;
 }
@@ -35,35 +37,57 @@ img {
 }
 
 a {
-  text-decoration: none;
   color: var(--purple);
+  text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h5, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin-block-start: 0;
   margin-block-end: 0;
+}
 
+figure {
+  margin: 0;
+  padding: 0;
 }
 
 .sry-only {
   position: absolute;
-  padding: 0;
-  margin: -1px;
-  height: 1px;
-  width: 1px;
-  clip: rect(0, 0, 0, 0);
   overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
 }
-
 
 .btn {
   display: inline-block;
   padding: 16px 26px;
   border-radius: 100px;
   font-weight: 700;
+  cursor: pointer;
 
   &--primary {
     background: var(--purple);
     color: var(--white, #fff);
+  }
+
+  &--secondary {
+    border: 2px solid var(--purple);
+    color: var(--purple);
+    transition: 0.1s all;
+    transition-property: background-color, color;
+
+    &:hover {
+      background-color: var(--purple);
+      color: var(--white);
+    }
   }
 }
