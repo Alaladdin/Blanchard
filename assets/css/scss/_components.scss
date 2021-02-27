@@ -1,4 +1,5 @@
 @import 'mixins/hover';
+@import 'mixins/hide-input-number-arrow';
 
 .placeholder {
   max-width: 740px;
@@ -144,28 +145,31 @@
 .language-picker {
   display: flex;
 
-  &__item {
-    &:not(:last-child) {
-      margin-right: 30px;
+  &__item:not(:last-child) {
+    margin-right: 35px;
+  }
+
+  &__btn {
+    width: 62px;
+    height: 62px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transition: 0.2s border-color;
+
+    &:hover,
+    &:focus {
+      border-color: var(--gray-light);
+      outline: none;
+    }
+
+    &.selected {
+      border-color: var(--purple);
     }
   }
 
   &__img {
     padding: 8px;
-    border: 2px solid transparent;
-    border-radius: 50%;
-    transition: 0.2s border-color;
-
-    &:hover {
-      border-color: var(--gray-light);
-    }
   }
-
-  &__input:checked + &__img {
-    border-color: var(--purple);
-  }
-
-  // @todo create animation via ::after onn selected item (border animation)
 }
 
 // Personality
@@ -275,27 +279,30 @@
   &__body {
     flex-wrap: wrap;
     overflow: hidden;
-    //height: auto;
     max-height: 0;
-    transition: 0.2s all;
-    transition-property: max-height;
+    transition: 0.3s max-height ease;
+    //content-visibility: auto;
+
+    &-content {
+      padding: 35px 0;
+    }
   }
 
   &__item--opened &__body {
     max-height: 300px;
-    padding: 20px 0;
   }
 
   &__option {
     display: inline-flex;
     flex-wrap: wrap;
     width: 30%;
+    margin-right: 15px;
     text-align: left;
     cursor: pointer;
     transition: 0.2s color;
 
     &:not(:last-child) {
-      margin-bottom: 10px;
+      margin-bottom: 14px;
     }
 
     &:hover,
@@ -348,10 +355,203 @@
   }
 
   &__link {
-    margin-top: 23px;
+    margin-top: 90px;
     padding-bottom: 3px;
     border-bottom: 1px solid var(--purple);
     color: var(--purple);
     cursor: pointer;
+  }
+}
+
+// Checkbox
+.checkbox {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+
+  &__item {
+    user-select: none;
+
+    &:not(:last-child) {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__img {
+    padding: 8px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    transition: 0.1s border-color;
+
+    @include hover {
+      border-color: var(--gray-light);
+    }
+  }
+
+  &__icon {
+    position: relative;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 10px;
+    border: 1px solid;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 4px;
+      height: 4px;
+      margin: auto;
+      border-radius: 50%;
+      background-color: transparent;
+      transition: 0.1s background-color;
+    }
+
+    &:focus {
+      outline: none;
+
+      &::after {
+        background-color: #fff;
+      }
+    }
+  }
+
+  &__item:hover &__icon::after {
+    background-color: var(--white);
+  }
+
+  &__input:checked + &__icon {
+    border-color: var(--purple);
+
+    &::after {
+      background-color: var(--purple);
+    }
+  }
+}
+
+// Slider Navigation
+.slider-nav {
+  display: flex;
+  align-items: center;
+
+  &__fraction {
+    width: auto;
+    margin: 0 20px;
+  }
+
+  &__btn-prev,
+  &__btn-next {
+    width: 30px;
+    height: 30px;
+    background-image: url('../icon/slider-arrow-right.svg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+
+  &__btn-prev {
+    transform: rotate(180deg);
+  }
+}
+
+// Input Group
+.input-group {
+  --input-group-border: 1px solid rgba(255, 255, 255, 0.5);
+
+  display: flex;
+  border: var(--input-group-border);
+
+  &--rounded {
+    border-radius: 6px;
+  }
+
+  &__prepend,
+  &__append {
+    overflow: hidden;
+  }
+  &__label,
+  &__input {
+    padding: 10px 11px;
+  }
+
+  &__label {
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+
+    &:not(:last-child) {
+      margin-right: -1px;
+    }
+  }
+
+  &__input {
+    @extend %hide-input-num-arrow;
+
+    max-width: 73px;
+    background-color: rgba(157, 92, 208, 0.5);
+    color: inherit;
+
+    &::placeholder {
+      color: inherit;
+    }
+  }
+
+  &__prepend {
+    margin-right: -1px;
+    border-radius: 6px 0 0 6px;
+  }
+
+  &__append {
+    margin-left: -1px;
+    border-radius: 0 6px 6px 0;
+  }
+}
+
+// Editions Slider
+.editions-slider {
+  overflow: hidden;
+
+  &__navigation {
+    margin-bottom: 32px;
+  }
+
+  &__item {
+    width: auto;
+  }
+
+  &__img {
+    object-fit: cover;
+    width: 350px;
+    height: 390px;
+    margin-bottom: 20px;
+  }
+
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    margin-bottom: 16px;
+  }
+
+  &__price {
+    font-style: italic;
+  }
+
+  &__title {
+    margin-bottom: 5px;
+    font-weight: 700;
+  }
+
+  &__btn {
+    padding: 10px 20px;
   }
 }

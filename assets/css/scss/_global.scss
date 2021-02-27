@@ -20,14 +20,22 @@ label {
 
 input,
 button {
+  padding: 0;
   border: none;
   background: none;
   font-size: 1rem;
   font-family: 'Open Sans', sans-serif;
 }
 
+button,
+input[type='button'],
+input[type='submit'] {
+  cursor: pointer;
+}
+
 ul,
 ol {
+  margin: 0;
   padding: 0;
   list-style: none;
 }

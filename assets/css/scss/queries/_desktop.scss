@@ -1,0 +1,273 @@
+
+.container {
+  width: 100%;
+  max-width: 1630px;
+  margin: 0 auto;
+  padding-right: 5px;
+  padding-left: 25px;
+}
+
+// Header
+.header {
+  position: absolute;
+  width: 100%;
+  color: var(--white, #fff);
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__primary {
+    padding: 29px 0;
+    background: var(--primary);
+  }
+
+  &__secondary {
+    padding: 21px 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  &__nav {
+    margin-right: 105px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__item {
+    font-weight: 600;
+    font-size: 1.125rem;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 62px;
+    }
+
+    // dropDown item
+    &--dropdown {
+      font-weight: 400;
+
+      &:not(:last-child) {
+        margin-right: 97px;
+      }
+
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-left: 4px;
+        background-image: url('../icon/dropdown-arrow-down.svg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  &__link {
+    color: var(--white, #fff);
+  }
+}
+
+// Hero
+.hero {
+  min-height: 800px;
+  background: url('../img/hero-1.jpg') no-repeat center;
+  background-size: cover;
+  color: var(--white, #fff);
+
+  &__title {
+    max-width: 600px;
+    margin-left: -5px;
+    padding-top: 242px;
+    font-size: 4.5rem;
+  }
+
+  &__desc {
+    max-width: 580px;
+    padding-top: 21px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+
+  &__btn {
+    margin-top: 90px;
+    padding: 26px 36px;
+    font-size: 1.125rem;
+  }
+}
+
+// About
+.about {
+  &__container {
+    padding-bottom: 70px;
+  }
+}
+
+// Gallery
+.gallery {
+  background: url('../img/gallery-bg.jpg') center no-repeat;
+  background-size: cover;
+  color: var(--white);
+
+  &__container {
+    display: grid;
+    grid-template-areas:
+      'header slider'
+      'note slider';
+    grid-template-rows: 430px 400px; // fix
+    grid-template-columns: 400px calc(100% - 400px); // fix
+    grid-column-gap: 50px;
+    padding-top: 85px;
+    padding-bottom: 80px;
+  }
+
+  &__header {
+    grid-area: header;
+  }
+
+  &__title {
+    padding: 0;
+    color: var(--white, #fff);
+  }
+
+  &__filter {
+    padding-top: 30px;
+  }
+
+  &__slider {
+    position: relative;
+    grid-area: slider;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1150px; // fix
+    height: 100%;
+  }
+
+  &__item {
+    height: auto;
+  }
+
+  &__img {
+    width: auto; // fix
+    max-width: 350px; // fix
+    max-height: 350px; // fix
+  }
+
+  &__navigation {
+    padding-top: 20px;
+    padding-bottom: 30px;
+  }
+
+  &__note {
+    grid-area: note;
+    align-self: flex-end;
+    max-width: 360px;
+    margin-bottom: -11px;
+    line-height: 32px;
+  }
+}
+
+// Catalog
+.catalog {
+  &__container {
+    &--bottom {
+      display: flex;
+      padding-top: 35px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 85px;
+  }
+
+  &__desc {
+    padding-top: 15px;
+  }
+
+  &__title {
+    margin-right: 30px;
+    padding: 0;
+  }
+
+  &__personality {
+    max-width: 750px;
+  }
+
+  &__accordion {
+    margin: 0 0 0 45px;
+  }
+}
+
+// Events
+.events {
+  margin-bottom: 80px;
+
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    grid-gap: 50px;
+    justify-content: center;
+    margin-bottom: 48px;
+  }
+
+  &__btn {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 19px 34px;
+    font-size: 1.1rem;
+  }
+}
+
+// Editions
+.editions {
+  background: url('../img/editions-bg.jpg');
+  background-size: cover;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding: 83px 6px 75px 22px;
+  }
+
+  &__title {
+    margin-bottom: 28px;
+    padding-top: 0;
+    color: var(--white, #fff);
+  }
+
+  &__checkbox {
+    margin-bottom: 40px;
+  }
+
+  &__price {
+    &-title {
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+  }
+
+  &--right-side {
+    max-width: 100%;
+    padding-top: 30px;
+  }
+
+  &__slider {
+    max-width: 1150px;
+  }
+}
