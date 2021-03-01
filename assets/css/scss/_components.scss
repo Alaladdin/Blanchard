@@ -12,7 +12,7 @@
   &__word {
     border-radius: 3px;
     background: #eee;
-    color: #eee;
+    color: transparent;
     font-size: 0.9rem;
     letter-spacing: 0.2rem;
   }
@@ -21,6 +21,7 @@
 // Section
 .section {
   &-title {
+    margin: 0 0 20px 0;
     padding-top: 85px;
     color: var(--dark);
     font-weight: 400;
@@ -29,7 +30,7 @@
 
   &-desc {
     max-width: 1080px;
-    padding-top: 20px;
+    margin: 0;
     line-height: 2;
   }
 }
@@ -56,7 +57,7 @@
 }
 
 // Search
-.search {
+.search-form {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -284,7 +285,7 @@
     //content-visibility: auto;
 
     &-content {
-      padding: 35px 0;
+      padding: 32px 0;
     }
   }
 
@@ -345,7 +346,7 @@
   }
 
   &__title {
-    margin-bottom: 5px;
+    margin: 0 0 5px 0;
     font-size: 1.45rem;
     line-height: 1.3;
   }
@@ -478,6 +479,7 @@
   &__append {
     overflow: hidden;
   }
+
   &__label,
   &__input {
     padding: 10px 11px;
@@ -553,5 +555,97 @@
 
   &__btn {
     padding: 10px 20px;
+  }
+}
+
+.address {
+  &__title {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+}
+
+// Call form
+.call-form {
+  &__title {
+    margin: 40px 0 20px 0;
+    font-size: 1.4rem;
+  }
+
+  &__input {
+    width: 100%;
+    margin-bottom: 23px;
+    padding: 10px 20px;
+    border: 1px solid var(--dark);
+    border-radius: 20px;
+
+    &::placeholder {
+      color: var(--gray, #999);
+    }
+  }
+
+  &__submit {
+    padding: 16px 38px;
+  }
+}
+
+// Contact icons
+.contact-icons {
+  &__title {
+    margin: 0 0 15px 0;
+    font-size: 1.35rem;
+  }
+
+  &__item {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    &--wt {
+      background-image: url('../icon/logo-whatsapp.svg');
+    }
+
+    &--tg {
+      background-image: url('../icon/logo-tg.svg');
+    }
+  }
+}
+
+// Social
+.social-icons {
+  display: flex;
+
+  &__item {
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &--vk {
+      background-image: url('../icon/icon-vk.svg');
+    }
+
+    &--inst {
+      background-image: url('../icon/icon-instagram.svg');
+    }
+
+    &--fb {
+      background-image: url('../icon/icon-fb.svg');
+    }
   }
 }

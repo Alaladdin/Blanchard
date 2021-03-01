@@ -1,10 +1,11 @@
+@import '../mixins/hover';
 
 .container {
   width: 100%;
   max-width: 1630px;
   margin: 0 auto;
-  padding-right: 5px;
-  padding-left: 25px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 // Header
@@ -42,7 +43,6 @@
   &__item {
     font-weight: 600;
     font-size: 1.125rem;
-    cursor: pointer;
 
     &:not(:last-child) {
       margin-right: 62px;
@@ -84,13 +84,14 @@
 
   &__title {
     max-width: 600px;
-    margin-left: -5px;
+    margin: 0 0 0 -5px;
     padding-top: 242px;
     font-size: 4.5rem;
   }
 
   &__desc {
     max-width: 580px;
+    margin: 0;
     padding-top: 21px;
     font-weight: 700;
     font-size: 1.125rem;
@@ -139,7 +140,7 @@
   }
 
   &__filter {
-    padding-top: 30px;
+    padding-top: 10px;
   }
 
   &__slider {
@@ -180,7 +181,7 @@
   &__container {
     &--bottom {
       display: flex;
-      padding-top: 35px;
+      padding-top: 40px;
     }
   }
 
@@ -188,10 +189,6 @@
     display: flex;
     align-items: flex-start;
     padding-top: 85px;
-  }
-
-  &__desc {
-    padding-top: 15px;
   }
 
   &__title {
@@ -204,7 +201,7 @@
   }
 
   &__accordion {
-    margin: 0 0 0 45px;
+    margin: 0 0 0 50px;
   }
 }
 
@@ -242,7 +239,7 @@
   &__container {
     display: flex;
     justify-content: space-between;
-    padding: 83px 6px 75px 22px;
+    padding: 83px 13px 75px 13px;
   }
 
   &__title {
@@ -269,5 +266,108 @@
 
   &__slider {
     max-width: 1150px;
+  }
+}
+
+.projects {
+  &__container {
+    margin-bottom: 25px;
+  }
+
+  &-partners {
+    &__title {
+      margin-bottom: 25px;
+      font-size: 1.44rem;
+    }
+
+    &__slider {
+      position: relative;
+
+      &-container {
+        max-width: 1450px;
+      }
+    }
+
+    &__list {
+      width: 100%;
+      margin: auto;
+      //padding: 0 50px;
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 450px;
+      height: auto;
+      padding: 37px 0;
+      border: 1px solid #cacaca;
+      opacity: 0.5;
+      filter: grayscale(1);
+      transition: 0.5s all;
+      transition-property: filter, opacity;
+
+      @include hover {
+        opacity: 1;
+        filter: grayscale(0);
+      }
+    }
+
+    &__btn {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      width: 30px;
+      height: 30px;
+      margin: auto 0;
+      background-image: url('../icon/arrow-down.svg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      cursor: pointer;
+      transform: rotate(-90deg);
+
+      &--prev {
+        transform: rotate(90deg);
+      }
+
+      &--next {
+        right: 0;
+      }
+    }
+  }
+}
+
+// Contacts
+.contacts {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__actions {
+    width: 100%;
+    max-width: 670px;
+    padding: 130px 118px 120px 152px
+  }
+
+  &__address {
+    margin-bottom: 8px;
+  }
+
+  &__form {
+    margin-bottom: 45px;
+  }
+}
+
+.footer {
+  background: var(--black);
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+    padding-bottom: 50px;
   }
 }

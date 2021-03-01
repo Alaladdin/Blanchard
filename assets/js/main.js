@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
       nextEl: '.gallery__btn-next',
       prevEl: '.gallery__btn-prev',
     },
-
     // breakpoints: {
     //     768: {
     //
@@ -35,12 +34,54 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     spaceBetween: 50,
     slidesPerView: 3,
-    // slidesPerGroup: 3,
     navigation: {
-      nextEl: '.editions-slider__btn-next',
       prevEl: '.editions-slider__btn-prev',
+      nextEl: '.editions-slider__btn-next',
     },
   });
+
+  // Partners slider
+  new Swiper('.projects-partners__slider-container', {
+    spaceBetween: 50,
+    slidesPerView: 3,
+    pagination: false,
+    loop: true,
+    navigation: {
+      prevEl: '.projects-partners__btn--prev',
+      nextEl: '.projects-partners__btn--next',
+    },
+  });
+
+  // Map
+
+  const createMap = () => {
+    const container = document.querySelector('.contact__map');
+    const map = document.createElement('div');
+
+    map.id = 'map';
+    map.style.width = '1230px';
+    map.style.height = '700px';
+
+    container.append(map);
+
+    ymaps.ready(() => {
+      const myMap = new ymaps.Map(map.id, {
+        center: [55.759253, 37.625019],
+        zoom: 15,
+        controls: [],
+      });
+
+      // Добавляем круг на карту.
+      const myCircle = new ymaps.Circle([[55.758463, 37.601079], 22], {}, {
+        fillColor: '#9d5cd0',
+        strokeWidth: 0,
+      });
+
+      myMap.geoObjects.add(myCircle);
+    });
+  };
+
+  createMap();
 
   // Change catalog lang
   const catalogLangBtn = document.querySelectorAll('.language-picker__btn');
