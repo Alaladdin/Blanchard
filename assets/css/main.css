@@ -11,6 +11,15 @@
 * {
   box-sizing: border-box;
 }
+*::-webkit-scrollbar {
+  width: 2px;
+}
+*::-webkit-scrollbar-track {
+  background-color: var(--black);
+}
+*::-webkit-scrollbar-thumb {
+  background-color: var(--white);
+}
 
 html,
 body {
@@ -21,6 +30,7 @@ body {
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
 }
 
 label {
@@ -629,6 +639,115 @@ figure {
   background-image: url("../icon/icon-fb.svg");
 }
 
+.dropdown {
+  position: relative;
+  user-select: none;
+}
+.dropdown__header {
+  color: var(--white);
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+.dropdown__header::after {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-left: 4px;
+  background-image: url("../icon/dropdown-arrow-down.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.dropdown__list {
+  position: absolute;
+  top: 44px;
+  display: none;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.6);
+  content-visibility: auto;
+}
+.dropdown__list.show {
+  display: block;
+}
+.dropdown__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+.dropdown__link {
+  display: block;
+  width: 100%;
+  min-width: 220px;
+  padding-top: 9px;
+  padding-bottom: 12px;
+  padding-left: 14px;
+  border: 2px solid transparent;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: var(--white);
+  font-weight: 400;
+  font-size: 0.875rem;
+}
+.dropdown__link--tintoretto {
+  background-image: url("../img/header__dropdown/dropdown__1.1.jpg");
+}
+.dropdown__link--frederick {
+  background-image: url("../img/header__dropdown/dropdown__1.2.jpg");
+}
+.dropdown__link--leonardo {
+  background-image: url("../img/header__dropdown/dropdown__1.3.jpg");
+}
+.dropdown__link--verrocchio {
+  background-image: url("../img/header__dropdown/dropdown__1.4.jpg");
+}
+.dropdown__link--mone {
+  background-image: url("../img/header__dropdown/dropdown__2.1.jpg");
+}
+.dropdown__link--sisley {
+  background-image: url("../img/header__dropdown/dropdown__2.2.jpg");
+}
+.dropdown__link--mane {
+  background-image: url("../img/header__dropdown/dropdown__2.3.jpg");
+}
+.dropdown__link--renuar {
+  background-image: url("../img/header__dropdown/dropdown__2.4.jpg");
+}
+.dropdown__link--vangogh {
+  background-image: url("../img/header__dropdown/dropdown__3.1.jpg");
+}
+.dropdown__link--cezanne {
+  background-image: url("../img/header__dropdown/dropdown__3.2.jpg");
+}
+.dropdown__link--gogen {
+  background-image: url("../img/header__dropdown/dropdown__3.3.jpg");
+}
+.dropdown__link--sulfur {
+  background-image: url("../img/header__dropdown/dropdown__3.4.jpg");
+}
+.dropdown__link--kandinsky {
+  background-image: url("../img/header__dropdown/dropdown__4.1.jpg");
+}
+.dropdown__link--marinetti {
+  background-image: url("../img/header__dropdown/dropdown__4.2.jpg");
+}
+.dropdown__link--malevich {
+  background-image: url("../img/header__dropdown/dropdown__4.3.jpg");
+}
+.dropdown__link--picasso {
+  background-image: url("../img/header__dropdown/dropdown__4.4.jpg");
+}
+.dropdown__link--karra {
+  background-image: url("../img/header__dropdown/dropdown__5.1.jpg");
+}
+.dropdown__link--pratella {
+  background-image: url("../img/header__dropdown/dropdown__5.2.jpg");
+}
+.dropdown__link--severini {
+  background-image: url("../img/header__dropdown/dropdown__5.3.jpg");
+}
+.dropdown__link--balla {
+  background-image: url("../img/header__dropdown/dropdown__5.4.jpg");
+}
+
 /* open-sans-regular - latin_cyrillic */
 @font-face {
   font-family: "Open Sans";
@@ -695,21 +814,10 @@ figure {
   margin-right: 62px;
 }
 .header__item--dropdown {
-  font-weight: 400;
+  font-size: 1.125rem;
 }
 .header__item--dropdown:not(:last-child) {
-  margin-right: 97px;
-}
-.header__item--dropdown::after {
-  content: "";
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin-left: 4px;
-  background-image: url("../icon/dropdown-arrow-down.svg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  margin-right: 99px;
 }
 .header__link {
   color: var(--white, #fff);

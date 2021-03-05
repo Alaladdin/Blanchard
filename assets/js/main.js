@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 3,
     slidesPerGroup: 3,
     navigation: {
-      nextEl: '.gallery__btn-next',
-      prevEl: '.gallery__btn-prev',
+      nextEl: '.gallery__btn--next',
+      prevEl: '.gallery__btn--prev',
     },
     // breakpoints: {
     //     768: {
@@ -35,8 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
     spaceBetween: 50,
     slidesPerView: 3,
     navigation: {
-      prevEl: '.editions-slider__btn-prev',
-      nextEl: '.editions-slider__btn-next',
+      prevEl: '.editions-slider__btn--prev',
+      nextEl: '.editions-slider__btn--next',
     },
   });
 
@@ -95,6 +95,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log(`Selected catalog lang is '${selectedLang}'`);
   }));
+
+  // Dropdowns
+  {
+    const activeToggler = () => document.querySelector('.dropdown__header.active');
+    const activeDropdown = () => document.querySelector('.dropdown__list.show');
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    document.addEventListener('click', (e) => {
+      const allowedClasses = ['dropdown', 'dropdown__header', 'dropdown__list'];
+
+      // if clicked inside allowed classes -> do nothing
+      if (!allowedClasses.includes(e.target.classList[0])) {
+        if (activeToggler()) hideDropdown();
+      }
+    });
+
+    const hideDropdown = () => {
+      if (activeToggler()) activeToggler().classList.remove('active');
+      if (activeDropdown()) activeDropdown().classList.remove('show');
+    };
+
+    dropdowns.forEach((dropdown) => {
+      const toggler = dropdown.querySelector('.dropdown__header');
+      const dropdownList = dropdown.querySelector('.dropdown__list');
+
+      toggler.addEventListener('click', function(e) {
+        if (this !== activeToggler()) hideDropdown();
+
+        dropdownList.classList.toggle('show');
+        toggler.classList.toggle('active');
+      });
+    });
+  }
 
   /**
    * Accordion init function
