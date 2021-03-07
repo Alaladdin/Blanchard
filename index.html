@@ -1,169 +1,207 @@
 <!doctype html>
-<html lang='ru'>
+<html lang="ru">
 <head>
-  <meta charset='UTF-8'>
-  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blanchard — художественная галерея</title>
-  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css'>
-  <link rel='stylesheet' href='https://unpkg.com/swiper/swiper-bundle.min.css'>
-  <link rel='stylesheet' href='assets/css/main.css'>
-  <script defer src='https://unpkg.com/swiper/swiper-bundle.min.js'></script>
-  <script defer src='https://api-maps.yandex.ru/2.1/?apikey=d0ce7450-3f3d-4e76-b10f-252212768549&lang=en_US'></script>
-  <script defer src='assets/js/main.js'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+
+  <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script defer src="https://api-maps.yandex.ru/2.1/?apikey=d0ce7450-3f3d-4e76-b10f-252212768549&lang=en_US"></script>
+  <script defer src="assets/js/main.js"></script>
 </head>
 <body>
+
 <!-- Header -->
-<header id='top' class='header'>
-  <div class='header__primary'>
-    <div class='container header__container header__container--primary'>
-
-      <!-- logo -->
-      <div class='logo'>
-        <a href='#top' class='logo__link'>
-          <img src='assets/icon/logo.svg' class='logo__img header__logo-img' alt='Blanchard logo'>
-        </a>
-      </div>
-
-      <nav class='header__nav' aria-label='Основная навигация'>
-        <ul class='header__list'>
-          <li class='header__item'>
-            <a href='#about-us' class='header__link'>О нас</a>
+<header id="top" class="header">
+  <div class="header__primary">
+    <div class="container header__container">
+      <a href="#top">
+        <img src="assets/icon/logo.svg" alt="Лого Blanchard">
+      </a>
+      <nav class="header__nav">
+        <ul class="header__list">
+          <li class="header__item">
+            <a href="#about-us" class="header__link link-primary">О нас</a>
           </li>
 
-          <li class='header__item'>
-            <a href='#gallery' class='header__link'>Галерея</a>
+          <li class="header__item">
+            <a href="#gallery" class="header__link link-primary">Галерея</a>
           </li>
 
-          <li class='header__item'>
-            <a href='#catalog' class='header__link'>Каталог</a>
+          <li class="header__item">
+            <a href="#catalog" class="header__link link-primary">Каталог</a>
           </li>
 
-          <li class='header__item'>
-            <a href='#events' class='header__link'>События</a>
+          <li class="header__item">
+            <a href="#events" class="header__link link-primary">События</a>
           </li>
 
-          <li class='header__item'>
-            <a href='#editions' class='header__link'>Издания</a>
+          <li class="header__item">
+            <a href="#editions" class="header__link link-primary">Издания</a>
           </li>
 
-          <li class='header__item'>
-            <a href='#projects' class='header__link'>Проекты</a>
+          <li class="header__item">
+            <a href="#projects" class="header__link link-primary">Проекты</a>
           </li>
 
-          <li class='header__item'>
-            <a href='#contacts' class='header__link'>Контакты</a>
+          <li class="header__item">
+            <a href="#contacts" class="header__link link-primary">Контакты</a>
           </li>
         </ul>
       </nav>
-
-      <a href='/login/' class='login-link'>
-        <svg width='13' height='13' viewBox='0 0 13 13' fill='none' xmlns='http://www.w3.org/2000/svg'>
-          <path fill='white'
-                d='M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z'/>
+      <a href="#0" class="login-link link-primary">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill="currentColor"
+                d="M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z"/>
         </svg>
         <span>Войти</span>
       </a>
     </div>
   </div>
 
-  <div class='header__secondary'>
-    <div class='container header__container header__container--secondary'>
+  <div class="header__secondary">
+    <div class="container header__container">
+      <nav class="header__nav">
+        <ul class="header__list">
+          <li class="header__item header__item--dropdown dropdown">
+            <button class="dropdown__header link-primary">
+              Реализм
+              <svg class="dropdown__icon" width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 5L6 10L0.999997 5" stroke="currentColor"/>
+              </svg>
+            </button>
 
-      <nav class='header__nav' aria-label='Вторичная навигация'>
-        <ul class='header__list'>
-          <li class='header__item header__item--dropdown dropdown'>
-            <button class='dropdown__header'>Реализм</button>
-            <ul class='dropdown__list'>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--tintoretto' href='#0'>Тинторетто</a>
+            <ul class="dropdown__list">
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--tintoretto" href="#0">Тинторетто</a>
               </li>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--frederick' href='#0'>Фридрих</a>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--frederick" href="#0">Фридрих</a>
               </li>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--leonardo' href='#0'>Леонардо</a>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--leonardo" href="#0">Леонардо</a>
               </li>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--verrocchio' href='#0'>Верроккьо</a>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--verrocchio" href="#0">Верроккьо</a>
               </li>
-            </ul>
-          </li>
-          <li class='header__item header__item--dropdown dropdown'>
-            <button class='dropdown__header'>Импрессионизм</button>
-            <ul class='dropdown__list'>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--mone' href='#0'>Моне</a>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--tintoretto" href="#0">Тинторетто</a>
               </li>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--sisley' href='#0'>Сислей</a>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--frederick" href="#0">Фридрих</a>
               </li>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--mane' href='#0'>Мане</a>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--leonardo" href="#0">Леонардо</a>
               </li>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--renuar' href='#0'>Ренуар</a>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--verrocchio" href="#0">Верроккьо</a>
               </li>
             </ul>
           </li>
-          <li class='header__item header__item--dropdown dropdown'>
-            <button class='dropdown__header'>Постимпрессионизм</button>
-            <ul class='dropdown__list'>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--vangogh' href='#0'>Ван Гог</a>
+          <li class="header__item header__item--dropdown dropdown">
+            <button class="dropdown__header link-primary">
+              Импрессионизм
+              <svg class="dropdown__icon" width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 5L6 10L0.999997 5" stroke="currentColor"/>
+              </svg>
+            </button>
+            <ul class="dropdown__list">
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--mone" href="#0">Моне</a>
               </li>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--cezanne' href='#0'>Сезанн</a>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--sisley" href="#0">Сислей</a>
               </li>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--gogen' href='#0'>Гоген</a>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--mane" href="#0">Мане</a>
               </li>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--sulfur' href='#0'>Сёра</a>
-              </li>
-            </ul>
-          </li>
-          <li class='header__item header__item--dropdown dropdown'>
-            <button class='dropdown__header'>Авангард</button>
-            <ul class='dropdown__list'>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--kandinsky' href='#0'>Кандинский</a>
-              </li>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--marinetti' href='#0'>Маринетти</a>
-              </li>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--malevich' href='#0'>Малевич</a>
-              </li>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--picasso' href='#0'>Пикассо</a>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--renuar" href="#0">Ренуар</a>
               </li>
             </ul>
           </li>
-          <li class='header__item header__item--dropdown dropdown'>
-            <button class='dropdown__header'>Футуризм</button>
-            <ul class='dropdown__list'>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--karra' href='#0'>Карра</a>
+          <li class="header__item header__item--dropdown dropdown">
+            <button class="dropdown__header link-primary">
+              Постимпрессионизм
+              <svg class="dropdown__icon" width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 5L6 10L0.999997 5" stroke="currentColor"/>
+              </svg>
+            </button>
+            <ul class="dropdown__list">
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--vangogh" href="#0">Ван Гог</a>
               </li>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--pratella' href='#0'>Прателла</a>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--cezanne" href="#0">Сезанн</a>
               </li>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--severini' href='#0'>Северини</a>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--gogen" href="#0">Гоген</a>
               </li>
-              <li class='dropdown__item'>
-                <a class='dropdown__link dropdown__link--balla' href='#0'>Балла</a>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--sulfur" href="#0">Сёра</a>
+              </li>
+            </ul>
+          </li>
+          <li class="header__item header__item--dropdown dropdown">
+            <button class="dropdown__header link-primary">
+              Авангард
+              <svg class="dropdown__icon" width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 5L6 10L0.999997 5" stroke="currentColor"/>
+              </svg>
+            </button>
+            <ul class="dropdown__list">
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--kandinsky" href="#0">Кандинский</a>
+              </li>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--marinetti" href="#0">Маринетти</a>
+              </li>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--malevich" href="#0">Малевич</a>
+              </li>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--picasso" href="#0">Пикассо</a>
+              </li>
+            </ul>
+          </li>
+          <li class="header__item header__item--dropdown dropdown">
+            <button class="dropdown__header link-primary">
+              Футуризм
+              <svg class="dropdown__icon" width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 5L6 10L0.999997 5" stroke="currentColor"/>
+              </svg>
+            </button>
+            <ul class="dropdown__list">
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--karra" href="#0">Карра</a>
+              </li>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--pratella" href="#0">Прателла</a>
+              </li>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--severini" href="#0">Северини</a>
+              </li>
+              <li class="dropdown__item">
+                <a class="dropdown__link dropdown__link--balla" href="#0">Балла</a>
               </li>
             </ul>
           </li>
         </ul>
       </nav>
-
-      <form class='search-form'>
-        <button class='search-form__icon' aria-label='Найти'></button>
-        <label class='search-form__label'>
-          <input class='search-form__input' type='search' placeholder='Поиск по сайту'>
+      <form class="search-form">
+        <button class="search-form__icon" aria-label="Найти">
+          <svg width="23" height="22" viewBox="0 0 23 22" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <rect width="6.8678" height="1.71695" transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)" fill="currentColor"/>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z"
+                  fill="currentColor"/>
+          </svg>
+        </button>
+        <label class="search-form__label">
+          <input class="search-form__input" type="search" placeholder="Поиск по сайту">
         </label>
       </form>
     </div>
@@ -172,23 +210,23 @@
 </header>
 
 <!-- Hero -->
-<section class='hero'>
-  <div class='container'>
-    <h2 class='hero__title'>Прикоснитесь к прекрасному</h2>
-    <p class='hero__desc'>Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт предпосылки для новых
+<section class="hero">
+  <div class="container hero__container">
+    <h2 class="hero__title">Прикоснитесь к прекрасному</h2>
+    <p class="hero__desc">Мы вынуждены отталкиваться от того, что реализация намеченных плановых заданий создаёт предпосылки для новых
       предложений.</p>
-    <a href='#contacts' class='btn btn--primary hero__btn'>Подписаться на рассылку</a>
+    <a href="#contacts" class="hero__btn btn btn--primary">Подписаться на рассылку</a>
   </div>
 </section>
 
 <!-- Main -->
-<main class='main'>
+<main class="main">
 
   <!-- About section -->
-  <section id='about-us' class='about'>
-    <div class='container about__container'>
-      <h2 class='section-title about__title'>О нас</h2>
-      <p class='section-desc about__desc'>Ясность нашей позиции очевидна: семантический разбор внешних противодействий однозначно определяет каждого участника как
+  <section id="about-us" class="about">
+    <div class="container about__container">
+      <h2 class="section-title">О нас</h2>
+      <p class="section-desc">Ясность нашей позиции очевидна: семантический разбор внешних противодействий однозначно определяет каждого участника как
         способного принимать собственные решения касаемо распределения внутренних резервов и ресурсов. Не следует, однако, забывать,
         что высококачественный прототип будущего проекта влечет за собой процесс внедрения и модернизации модели развития.
         Повседневная практика показывает, что высокое качество позиционных исследований создаёт необходимость включения в
@@ -199,165 +237,165 @@
   </section>
 
   <!-- Gallery section -->
-  <section id='gallery' class='gallery'>
-    <div class='container gallery__container'>
-      <div class='gallery__header'>
-        <h2 class='section-title gallery__title'>Галерея</h2>
+  <section id="gallery" class="gallery">
+    <div class="container gallery__container">
+      <div class="gallery__header">
+        <h2 class="gallery__title section-title">Галерея</h2>
 
         <!-- Filter -->
-        <div class='filter gallery__filter'>
-          <div class='filter__desc'>Фильтровать по:</div>
-          <div class='filter__header'>Автор</div>
-          <ul class='filter__body'>
-            <li class='filter__option'>Направление</li>
-            <li class='filter__option'>Техника</li>
+        <div class="filter gallery__filter">
+          <div class="filter__desc">Фильтровать по:</div>
+          <div class="filter__header">Автор</div>
+          <ul class="filter__body">
+            <li class="filter__option">Направление</li>
+            <li class="filter__option">Техника</li>
           </ul>
         </div>
       </div>
 
       <!-- Slider -->
-      <div class='gallery__slider'>
-        <div class='gallery__navigation slider-nav'>
-          <button class=' slider-nav__btn-prev gallery__btn--prev'></button>
-          <span class='slider-nav__fraction gallery__fraction'>N / N</span>
-          <button class='slider-nav__btn-next gallery__btn--next'></button>
+      <div class="gallery__slider">
+        <div class="gallery__navigation slider-nav">
+          <button class=" slider-nav__btn-prev gallery__btn--prev"></button>
+          <span class="slider-nav__fraction gallery__fraction">N / N</span>
+          <button class="slider-nav__btn-next gallery__btn--next"></button>
         </div>
 
-        <div class='gallery__list swiper-wrapper'>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/1.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/2.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/3.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/4.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/5.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/6.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/7.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/8.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/9.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/10.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/11.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/12.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/13.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/14.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/15.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/16.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/17.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/18.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/19.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/20.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/21.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/22.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/23.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/24.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/25.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/26.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/27.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/28.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/29.jpg' alt=''>
-          </div>
-          <div class='gallery__item swiper-slide'>
-            <img class='gallery__img' src='assets/img/gallery__slider/30.jpg' alt=''>
-          </div>
+        <div class="gallery__list swiper-wrapper">
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/1.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/2.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/3.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/4.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/5.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/6.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/7.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/8.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/9.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/10.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/11.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/12.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/13.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/14.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/15.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/16.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/17.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/18.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/19.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/20.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/21.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/22.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/23.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/24.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/25.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/26.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/27.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/28.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/29.jpg" alt="gallery item">
+          </a>
+          <a class="gallery__item swiper-slide" href="#0">
+            <img class="gallery__img" src="assets/img/gallery__slider/30.jpg" alt="gallery item">
+          </a>
         </div>
       </div>
 
-      <div class='gallery__note'>Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний
-        <a href='/login/' class='text-purple'>авторизуйтесь</a>, либо воспользуйтесь лицензией.
+      <div class="gallery__note">Вам предоставляется 10 бесплатных скачиваний. Для увеличения количества скачиваний
+        <a href="#0" class="text-purple link-primary">авторизуйтесь</a>, либо воспользуйтесь лицензией.
       </div>
     </div>
   </section>
 
   <!-- Catalog -->
-  <section id='catalog' class='catalog'>
+  <section id="catalog" class="catalog">
 
     <!-- Top -->
-    <div class='container catalog__container catalog__container--top'>
-      <div class='catalog__header'>
-        <h2 class='section-title catalog__title'>Каталог</h2>
+    <div class="container catalog__container--top">
+      <div class="catalog__header">
+        <h2 class="section-title catalog__title">Каталог</h2>
 
-        <ul class='language-picker catalog__language-picker'>
-          <li class='language-picker__item'>
-            <button class='language-picker__btn' data-lang='fr'><img src='assets/icon/flag-fr.svg' class='language-picker__img' alt='Флаг Франции' draggable='false'></button>
+        <ul class="language-picker catalog__language-picker">
+          <li class="language-picker__item">
+            <button class="language-picker__btn" data-lang="fr"><img src="assets/icon/flag-fr.svg" class="language-picker__img" alt="Флаг Франции" draggable="false"></button>
           </li>
 
-          <li class='language-picker__item'>
-            <button class='language-picker__btn' data-lang='ge'><img src='assets/icon/flag-ge.svg' class='language-picker__img' alt='Флаг Германии' draggable='false'></button>
+          <li class="language-picker__item">
+            <button class="language-picker__btn" data-lang="ge"><img src="assets/icon/flag-ge.svg" class="language-picker__img" alt="Флаг Германии" draggable="false"></button>
           </li>
 
-          <li class='language-picker__item'>
-            <button class='language-picker__btn selected' data-lang='it'>
-              <img src='assets/icon/flag-it.svg' class='language-picker__img' alt='Флаг Италии' draggable='false'>
+          <li class="language-picker__item">
+            <button class="language-picker__btn selected" data-lang="it">
+              <img src="assets/icon/flag-it.svg" class="language-picker__img" alt="Флаг Италии" draggable="false">
             </button>
           </li>
 
-          <li class='language-picker__item'>
-            <button class='language-picker__btn' data-lang='ru'><img src='assets/icon/flag-ru.svg' class='language-picker__img' alt='Флаг России' draggable='false'></button>
+          <li class="language-picker__item">
+            <button class="language-picker__btn" data-lang="ru"><img src="assets/icon/flag-ru.svg" class="language-picker__img" alt="Флаг России" draggable="false"></button>
           </li>
 
-          <li class='language-picker__item'>
-            <button class='language-picker__btn' data-lang='be'><img src='assets/icon/flag-be.svg' class='language-picker__img' alt='Флаг Бельгии' draggable='false'></button>
+          <li class="language-picker__item">
+            <button class="language-picker__btn" data-lang="be"><img src="assets/icon/flag-be.svg" class="language-picker__img" alt="Флаг Бельгии" draggable="false"></button>
           </li>
         </ul>
 
       </div>
 
-      <p class='section-desc'>Акционеры крупнейших компаний, которые представляют собой яркий пример
+      <p class="section-desc">Акционеры крупнейших компаний, которые представляют собой яркий пример
         континентально-европейского типа политической культуры, будут объявлены нарушающими
         общечеловеческие нормы этики и морали. Являясь всего лишь частью общей картины, стремящиеся
         вытеснить традиционное производство, нанотехнологии и по сей день остаются уделом либералов,
@@ -365,19 +403,19 @@
     </div>
 
     <!-- Bottom -->
-    <div class='container catalog__container catalog__container--bottom'>
+    <div class="container catalog__container--bottom">
       <!-- Personality -->
-      <div class='personality catalog__personality'>
+      <div class="personality catalog__personality">
 
-        <picture class='personality__avatar'>
+        <picture class="personality__avatar">
           <!-- <source media="(min-width:650px)" srcset="img_pink_flowers.jpg"> -->
           <!-- <source media="(min-width:465px)" srcset="img_white_flower.jpg"> -->
-          <img src='assets/img/personality.jpg' alt='Доменико Гирландайо'>
+          <img src="assets/img/personality.jpg" alt="Доменико Гирландайо">
         </picture>
 
-        <div class='personality__name'>Доменико Гирландайо</div>
-        <div class='personality__date'>2 июня 1448 — 11 января 1494.</div>
-        <div class='personality__desc'>Один из ведущих флорентийских художников Кватроченто, основатель художественной династии,
+        <div class="personality__name">Доменико Гирландайо</div>
+        <div class="personality__date">2 июня 1448 — 11 января 1494.</div>
+        <div class="personality__desc">Один из ведущих флорентийских художников Кватроченто, основатель художественной династии,
           которую продолжили его брат Давид и сын Ридольфо. Глава художественной мастерской, где юный
           Микеланджело в течение года овладевал профессиональными навыками. Автор фресковых циклов, в
           которых выпукло, со всевозможными подробностями показана домашняя жизнь библейских персонажей
@@ -386,85 +424,217 @@
       </div>
 
       <!-- Accordion -->
-      <ul class='accordion catalog__accordion'>
+      <ul class="accordion catalog__accordion">
         <!-- 1 -->
-        <li class='accordion__item accordion__item--opened'>
-          <button class='accordion__btn'>C 1400 по 1499 гг.</button>
-          <div class='accordion__body'>
-            <div class='accordion__body-content'>
-              <button class='accordion__option'>Бенедетто ди Биндо</button>
-              <button class='accordion__option'>Бергоньоне, Амброджо</button>
-              <button class='accordion__option'>Биссоло, Франческо</button>
-              <button class='accordion__option'>Больтраффио, Джованни</button>
-              <button class='accordion__option'>Бонсиньори, Франческо</button>
-              <button class='accordion__option'>Боттичини, Рафаэлло</button>
-              <button class='accordion__option'>Брамантино</button>
-              <button class='accordion__option'>Бреа, Людовико</button>
-              <button class='accordion__option'>Бьяджо д’Антонио Туччи</button>
-              <button class='accordion__option'>Веккьетта</button>
-              <button class='accordion__option'>Андреа Верроккьо</button>
-              <button class='accordion__option accordion__option--selected'>Доменико Гирландайо</button>
-              <button class='accordion__option'>Беноццо Гоццоли</button>
-              <button class='accordion__option'>Граначчи, Франческо</button>
-              <button class='accordion__option'>Грегорио ди Чекко</button>
-              <button class='accordion__option'>Джованни да Удине</button>
-              <button class='accordion__option'>Джованни ди Паоло</button>
-              <button class='accordion__option'>Джорджоне</button>
-              <button class='accordion__option'>Парентино, Бернардо</button>
-              <button class='accordion__option'>Пезеллино</button>
-              <button class='accordion__option'>Пьетро Перуджино</button>
-              <button class='accordion__option'>Перуцци, Бальдассаре</button>
-              <button class='accordion__option'>Пизанелло</button>
-              <button class='accordion__option'>Пинтуриккьо</button>
+        <li class="accordion__item accordion__item--opened">
+          <button class="accordion__btn">C 1400 по 1499 гг.</button>
+          <div class="accordion__body">
+            <div class="accordion__body-content">
+              <button class="accordion__option link-primary">Бенедетто ди Биндо</button>
+              <button class="accordion__option link-primary">Бергоньоне, Амброджо</button>
+              <button class="accordion__option link-primary">Биссоло, Франческо</button>
+              <button class="accordion__option link-primary">Больтраффио, Джованни</button>
+              <button class="accordion__option link-primary">Бонсиньори, Франческо</button>
+              <button class="accordion__option link-primary">Боттичини, Рафаэлло</button>
+              <button class="accordion__option link-primary">Брамантино</button>
+              <button class="accordion__option link-primary">Бреа, Людовико</button>
+              <button class="accordion__option link-primary">Бьяджо д’Антонио Туччи</button>
+              <button class="accordion__option link-primary">Веккьетта</button>
+              <button class="accordion__option link-primary">Андреа Верроккьо</button>
+              <button class="accordion__option link-primary accordion__option--selected">Доменико Гирландайо</button>
+              <button class="accordion__option link-primary">Беноццо Гоццоли</button>
+              <button class="accordion__option link-primary">Граначчи, Франческо</button>
+              <button class="accordion__option link-primary">Грегорио ди Чекко</button>
+              <button class="accordion__option link-primary">Джованни да Удине</button>
+              <button class="accordion__option link-primary">Джованни ди Паоло</button>
+              <button class="accordion__option link-primary">Джорджоне</button>
+              <button class="accordion__option link-primary">Парентино, Бернардо</button>
+              <button class="accordion__option link-primary">Пезеллино</button>
+              <button class="accordion__option link-primary">Пьетро Перуджино</button>
+              <button class="accordion__option link-primary">Перуцци, Бальдассаре</button>
+              <button class="accordion__option link-primary">Пизанелло</button>
+              <button class="accordion__option link-primary">Пинтуриккьо</button>
             </div>
           </div>
         </li>
 
         <!-- 2 -->
-        <li class='accordion__item'>
-          <button class='accordion__btn'>C 1500 по 1599 гг.</button>
-          <div class='accordion__body'>
-            <div class='accordion__body-content'>Have no content here</div>
+        <li class="accordion__item">
+          <button class="accordion__btn">C 1500 по 1599 гг.</button>
+          <div class="accordion__body">
+            <div class="accordion__body-content placeholder">
+              <span class="placeholder__word">Lorem</span>
+              <span class="placeholder__word">ipsum</span>
+              <span class="placeholder__word">dolor</span>
+              <span class="placeholder__word">sit</span>
+              <span class="placeholder__word">amet</span>
+              <span class="placeholder__word">consectetur</span>
+              <span class="placeholder__word">adipisicing</span>
+              <span class="placeholder__word">elit</span>
+              <span class="placeholder__word">Commodi</span>
+              <span class="placeholder__word">consequuntur</span>
+              <span class="placeholder__word">eveniet</span>
+              <span class="placeholder__word">illo</span>
+              <span class="placeholder__word">iste</span>
+              <span class="placeholder__word">minus</span>
+              <span class="placeholder__word">nulla</span>
+              <span class="placeholder__word">porro</span>
+              <span class="placeholder__word">provident</span>
+              <span class="placeholder__word">quaerat</span>
+              <span class="placeholder__word">sapiente</span>
+              <span class="placeholder__word">velit</span>
+              <span class="placeholder__word">sapiente</span>
+            </div>
           </div>
         </li>
 
         <!-- 3 -->
-        <li class='accordion__item'>
-          <button class='accordion__btn'>C 1600 по 1699 гг.</button>
-          <div class='accordion__body'>
-            <div class='accordion__body-content'>Have no content here</div>
+        <li class="accordion__item">
+          <button class="accordion__btn">C 1600 по 1699 гг.</button>
+          <div class="accordion__body">
+            <div class="accordion__body-content placeholder">
+              <span class="placeholder__word">Lorem</span>
+              <span class="placeholder__word">ipsum</span>
+              <span class="placeholder__word">dolor</span>
+              <span class="placeholder__word">sit</span>
+              <span class="placeholder__word">amet</span>
+              <span class="placeholder__word">consectetur</span>
+              <span class="placeholder__word">adipisicing</span>
+              <span class="placeholder__word">elit</span>
+              <span class="placeholder__word">Commodi</span>
+              <span class="placeholder__word">consequuntur</span>
+              <span class="placeholder__word">eveniet</span>
+              <span class="placeholder__word">illo</span>
+              <span class="placeholder__word">iste</span>
+              <span class="placeholder__word">minus</span>
+              <span class="placeholder__word">nulla</span>
+              <span class="placeholder__word">porro</span>
+              <span class="placeholder__word">provident</span>
+              <span class="placeholder__word">quaerat</span>
+              <span class="placeholder__word">sapiente</span>
+              <span class="placeholder__word">velit</span>
+              <span class="placeholder__word">sapiente</span>
+            </div>
           </div>
         </li>
 
         <!-- 4 -->
-        <li class='accordion__item'>
-          <button class='accordion__btn'>C 1700 по 1799 гг.</button>
-          <div class='accordion__body'>
-            <div class='accordion__body-content'>Have no content here</div>
+        <li class="accordion__item">
+          <button class="accordion__btn">C 1700 по 1799 гг.</button>
+          <div class="accordion__body">
+            <div class="accordion__body-content placeholder">
+              <span class="placeholder__word">Lorem</span>
+              <span class="placeholder__word">ipsum</span>
+              <span class="placeholder__word">dolor</span>
+              <span class="placeholder__word">sit</span>
+              <span class="placeholder__word">amet</span>
+              <span class="placeholder__word">consectetur</span>
+              <span class="placeholder__word">adipisicing</span>
+              <span class="placeholder__word">elit</span>
+              <span class="placeholder__word">Commodi</span>
+              <span class="placeholder__word">consequuntur</span>
+              <span class="placeholder__word">eveniet</span>
+              <span class="placeholder__word">illo</span>
+              <span class="placeholder__word">iste</span>
+              <span class="placeholder__word">minus</span>
+              <span class="placeholder__word">nulla</span>
+              <span class="placeholder__word">porro</span>
+              <span class="placeholder__word">provident</span>
+              <span class="placeholder__word">quaerat</span>
+              <span class="placeholder__word">sapiente</span>
+              <span class="placeholder__word">velit</span>
+              <span class="placeholder__word">sapiente</span>
+            </div>
           </div>
         </li>
 
         <!-- 5 -->
-        <li class='accordion__item'>
-          <button class='accordion__btn'>C 1800 по 1899 гг.</button>
-          <div class='accordion__body'>
-            <div class='accordion__body-content'>Have no content here</div>
+        <li class="accordion__item">
+          <button class="accordion__btn">C 1800 по 1899 гг.</button>
+          <div class="accordion__body">
+            <div class="accordion__body-content placeholder">
+              <span class="placeholder__word">Lorem</span>
+              <span class="placeholder__word">ipsum</span>
+              <span class="placeholder__word">dolor</span>
+              <span class="placeholder__word">sit</span>
+              <span class="placeholder__word">amet</span>
+              <span class="placeholder__word">consectetur</span>
+              <span class="placeholder__word">adipisicing</span>
+              <span class="placeholder__word">elit</span>
+              <span class="placeholder__word">Commodi</span>
+              <span class="placeholder__word">consequuntur</span>
+              <span class="placeholder__word">eveniet</span>
+              <span class="placeholder__word">illo</span>
+              <span class="placeholder__word">iste</span>
+              <span class="placeholder__word">minus</span>
+              <span class="placeholder__word">nulla</span>
+              <span class="placeholder__word">porro</span>
+              <span class="placeholder__word">provident</span>
+              <span class="placeholder__word">quaerat</span>
+              <span class="placeholder__word">sapiente</span>
+              <span class="placeholder__word">velit</span>
+              <span class="placeholder__word">sapiente</span>
+            </div>
           </div>
         </li>
 
         <!-- 6 -->
-        <li class='accordion__item'>
-          <button class='accordion__btn'>C 1900 по 1999 гг.</button>
-          <div class='accordion__body'>
-            <div class='accordion__body-content'>Have no content here</div>
+        <li class="accordion__item">
+          <button class="accordion__btn">C 1900 по 1999 гг.</button>
+          <div class="accordion__body">
+            <div class="accordion__body-content placeholder">
+              <span class="placeholder__word">Lorem</span>
+              <span class="placeholder__word">ipsum</span>
+              <span class="placeholder__word">dolor</span>
+              <span class="placeholder__word">sit</span>
+              <span class="placeholder__word">amet</span>
+              <span class="placeholder__word">consectetur</span>
+              <span class="placeholder__word">adipisicing</span>
+              <span class="placeholder__word">elit</span>
+              <span class="placeholder__word">Commodi</span>
+              <span class="placeholder__word">consequuntur</span>
+              <span class="placeholder__word">eveniet</span>
+              <span class="placeholder__word">illo</span>
+              <span class="placeholder__word">iste</span>
+              <span class="placeholder__word">minus</span>
+              <span class="placeholder__word">nulla</span>
+              <span class="placeholder__word">porro</span>
+              <span class="placeholder__word">provident</span>
+              <span class="placeholder__word">quaerat</span>
+              <span class="placeholder__word">sapiente</span>
+              <span class="placeholder__word">velit</span>
+              <span class="placeholder__word">sapiente</span>
+            </div>
           </div>
         </li>
 
         <!-- 7 -->
-        <li class='accordion__item'>
-          <button class='accordion__btn'>C 2000 г.</button>
-          <div class='accordion__body'>
-            <div class='accordion__body-content'>Have no content here</div>
+        <li class="accordion__item">
+          <button class="accordion__btn">C 2000 г.</button>
+          <div class="accordion__body">
+            <div class="accordion__body-content placeholder">
+              <span class="placeholder__word">Lorem</span>
+              <span class="placeholder__word">ipsum</span>
+              <span class="placeholder__word">dolor</span>
+              <span class="placeholder__word">sit</span>
+              <span class="placeholder__word">amet</span>
+              <span class="placeholder__word">consectetur</span>
+              <span class="placeholder__word">adipisicing</span>
+              <span class="placeholder__word">elit</span>
+              <span class="placeholder__word">Commodi</span>
+              <span class="placeholder__word">consequuntur</span>
+              <span class="placeholder__word">eveniet</span>
+              <span class="placeholder__word">illo</span>
+              <span class="placeholder__word">iste</span>
+              <span class="placeholder__word">minus</span>
+              <span class="placeholder__word">nulla</span>
+              <span class="placeholder__word">porro</span>
+              <span class="placeholder__word">provident</span>
+              <span class="placeholder__word">quaerat</span>
+              <span class="placeholder__word">sapiente</span>
+              <span class="placeholder__word">velit</span>
+              <span class="placeholder__word">sapiente</span>
+            </div>
           </div>
         </li>
 
@@ -474,179 +644,179 @@
   </section>
 
   <!-- Events -->
-  <section id='events' class='events'>
-    <div class='container events__container'>
-      <h2 class='section-title events__title'>События</h2>
+  <section id="events" class="events">
+    <div class="container events__container">
+      <h2 class="section-title events__title">События</h2>
 
       <!-- Events row -->
-      <ul class='events__list'>
+      <ul class="events__list">
         <!-- #1 -->
-        <li class='events__item'>
-          <article class='item-event'>
-            <figure class='item-event__image-box'>
-              <img class='item-event__img' src='assets/img/event-1.jpg' alt='Книжная гравюра в живом восприятии'>
-              <figcaption class='item-event__info'>
-                <div class='item-event__address'>Музей им. Щусева</div>
-                <div class='item-event__date'>с 20 марта по 30 апреля</div>
+        <li class="events__item">
+          <article class="item-event">
+            <figure class="item-event__image-box">
+              <img class="item-event__img" src="assets/img/event-1.jpg" alt="Книжная гравюра в живом восприятии">
+              <figcaption class="item-event__info">
+                <div class="item-event__address">Музей им. Щусева</div>
+                <div class="item-event__date">с 20 марта по 30 апреля</div>
               </figcaption>
             </figure>
 
-            <div class='item-event__body'>
-              <div class='item-event__meta'>
-                <h3 class='item-event__title'>Книжная гравюра в живом восприятии</h3>
-                <div class='item-event__desc'>Один из ведущих флорентийских художников Кватроченто, основатель художественной
+            <div class="item-event__body">
+              <div class="item-event__meta">
+                <h3 class="item-event__title">Книжная гравюра в живом восприятии</h3>
+                <div class="item-event__desc">Один из ведущих флорентийских художников Кватроченто, основатель художественной
                   династии, которую продолжили его брат Давид и сын Ридольфо.
                 </div>
               </div>
-              <a href='#0' class='item-event__link'>Подробнее</a>
+              <a href="#0" class="item-event__link link-primary">Подробнее</a>
             </div>
           </article>
         </li>
 
         <!-- #2 -->
-        <li class='events__item'>
-          <article class='item-event'>
-            <figure class='item-event__image-box'>
-              <img class='item-event__img' src='assets/img/event-2.jpg' alt='«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.'>
-              <figcaption class='item-event__info'>
-                <div class='item-event__address'>ММОМА</div>
-                <div class='item-event__date'>24 марта 19:00</div>
+        <li class="events__item">
+          <article class="item-event">
+            <figure class="item-event__image-box">
+              <img class="item-event__img" src="assets/img/event-2.jpg" alt="«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.">
+              <figcaption class="item-event__info">
+                <div class="item-event__address">ММОМА</div>
+                <div class="item-event__date">24 марта 19:00</div>
               </figcaption>
             </figure>
 
-            <div class='item-event__body'>
-              <div class='item-event__meta'>
-                <h3 class='item-event__title'>«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.</h3>
-                <div class='item-event__desc'>Высокий уровень вовлечения представителей целевой аудитории является четким
+            <div class="item-event__body">
+              <div class="item-event__meta">
+                <h3 class="item-event__title">«Открытая дискуссия». Дмитрий Петров и Сергей Ильин.</h3>
+                <div class="item-event__desc">Высокий уровень вовлечения представителей целевой аудитории является четким
                   доказательством простого факта.
                 </div>
               </div>
-              <a href='#0' class='item-event__link'>Подробнее</a>
+              <a href="#0" class="item-event__link link-primary">Подробнее</a>
             </div>
           </article>
         </li>
 
         <!-- #3 -->
-        <li class='events__item'>
-          <article class='item-event'>
-            <figure class='item-event__image-box'>
-              <img class='item-event__img' src='assets/img/event-3.jpg' alt='Выставка «Формация 2020»'>
-              <figcaption class='item-event__info'>
-                <div class='item-event__address'>Еврейский музей</div>
-                <div class='item-event__date'>с 31 марта по 21 апреля</div>
+        <li class="events__item">
+          <article class="item-event">
+            <figure class="item-event__image-box">
+              <img class="item-event__img" src="assets/img/event-3.jpg" alt="Выставка «Формация 2020»">
+              <figcaption class="item-event__info">
+                <div class="item-event__address">Еврейский музей</div>
+                <div class="item-event__date">с 31 марта по 21 апреля</div>
               </figcaption>
             </figure>
-            <div class='item-event__body'>
-              <div class='item-event__meta'>
-                <h3 class='item-event__title'>Выставка «Формация 2020»</h3>
-                <div class='item-event__desc'>Идейные соображения высшего порядка, а также современная методология разработки играет
+            <div class="item-event__body">
+              <div class="item-event__meta">
+                <h3 class="item-event__title">Выставка «Формация 2020»</h3>
+                <div class="item-event__desc">Идейные соображения высшего порядка, а также современная методология разработки играет
                   важную роль в формировании глубокомысленных рассуждений.
                 </div>
               </div>
-              <a href='#0' class='item-event__link'>Подробнее</a>
+              <a href="#0" class="item-event__link link-primary">Подробнее</a>
             </div>
           </article>
         </li>
       </ul>
 
-      <button class='btn btn--secondary events__btn'>Все события</button>
+      <button class="btn btn--secondary events__btn">Все события</button>
     </div>
   </section>
 
   <!-- Editions -->
-  <section id='editions' class='editions'>
-    <div class='container editions__container'>
+  <section id="editions" class="editions">
+    <div class="container editions__container">
 
       <!-- Left side -->
-      <div class='editions--left-side'>
+      <div class="editions--left-side">
         <!-- Title -->
-        <h2 class='section-title editions__title'>Издания</h2>
+        <h2 class="section-title editions__title">Издания</h2>
 
         <!-- Checkboxes -->
-        <div class='checkbox editions__checkbox text-light'>
-          <div class='checkbox__title'>Категории</div>
-          <ul class='checkbox__list'>
-            <li class='checkbox__item'>
-              <label>
-                <input type='checkbox' tabindex='-1' class='sry-only checkbox__input'>
-                <span aria-checked='true' tabindex='0' role='checkbox' class='checkbox__icon'></span>
+        <div class="checkbox editions__checkbox text-light">
+          <div class="checkbox__title">Категории</div>
+          <ul class="checkbox__list">
+            <li class="checkbox__item">
+              <label class="checkbox__label" tabindex="0">
+                <input type="checkbox" tabindex="-1" class="sr-only checkbox__input">
+                <span aria-checked="false" role="checkbox" class="checkbox__icon"></span>
                 <span>Бестселлеры</span>
               </label>
             </li>
-            <li class='checkbox__item'>
-              <label>
-                <input type='checkbox' tabindex='-1' class='sry-only checkbox__input'>
-                <span aria-checked='true' tabindex='0' role='checkbox' class='checkbox__icon'></span>
+            <li class="checkbox__item">
+              <label class="checkbox__label" tabindex="0">
+                <input type="checkbox" tabindex="-1" class="sr-only checkbox__input">
+                <span aria-checked="false" role="checkbox" class="checkbox__icon"></span>
                 <span>Искусство</span>
               </label>
             </li>
-            <li class='checkbox__item'>
-              <label>
-                <input type='checkbox' tabindex='-1' class='sry-only checkbox__input'>
-                <span aria-checked='true' tabindex='0' role='checkbox' class='checkbox__icon'></span>
+            <li class="checkbox__item">
+              <label class="checkbox__label" tabindex="0">
+                <input type="checkbox" tabindex="-1" class="sr-only checkbox__input">
+                <span aria-checked="false" role="checkbox" class="checkbox__icon"></span>
                 <span>Архитектура</span>
               </label>
             </li>
-            <li class='checkbox__item'>
-              <label>
-                <input type='checkbox' tabindex='-1' class='sry-only checkbox__input'>
-                <span aria-checked='true' tabindex='0' role='checkbox' class='checkbox__icon'></span>
+            <li class="checkbox__item">
+              <label class="checkbox__label" tabindex="0">
+                <input type="checkbox" tabindex="-1" class="sr-only checkbox__input" checked>
+                <span aria-checked="true" role="checkbox" class="checkbox__icon"></span>
                 <span>Дизайн</span>
               </label>
             </li>
-            <li class='checkbox__item'>
-              <label>
-                <input type='checkbox' tabindex='-1' class='sry-only checkbox__input'>
-                <span aria-checked='true' tabindex='0' role='checkbox' class='checkbox__icon'></span>
+            <li class="checkbox__item">
+              <label class="checkbox__label" tabindex="0">
+                <input type="checkbox" tabindex="-1" class="sr-only checkbox__input">
+                <span aria-checked="false" role="checkbox" class="checkbox__icon"></span>
                 <span>Мода</span>
               </label>
             </li>
-            <li class='checkbox__item'>
-              <label>
-                <input type='checkbox' tabindex='-1' class='sry-only checkbox__input'>
-                <span aria-checked='true' tabindex='0' role='checkbox' class='checkbox__icon'></span>
+            <li class="checkbox__item">
+              <label class="checkbox__label" tabindex="0">
+                <input type="checkbox" tabindex="-1" class="sr-only checkbox__input">
+                <span aria-checked="false" role="checkbox" class="checkbox__icon"></span>
                 <span>Детям</span>
               </label>
             </li>
-            <li class='checkbox__item'>
-              <label>
-                <input type='checkbox' tabindex='-1' class='sry-only checkbox__input'>
-                <span aria-checked='true' tabindex='0' role='checkbox' class='checkbox__icon'></span>
+            <li class="checkbox__item">
+              <label class="checkbox__label" tabindex="0">
+                <input type="checkbox" tabindex="-1" class="sr-only checkbox__input">
+                <span aria-checked="false" role="checkbox" class="checkbox__icon"></span>
                 <span>Художественная литература</span>
               </label>
             </li>
-            <li class='checkbox__item'>
-              <label>
-                <input type='checkbox' tabindex='-1' class='sry-only checkbox__input'>
-                <span aria-checked='true' tabindex='0' role='checkbox' class='checkbox__icon'></span>
+            <li class="checkbox__item">
+              <label class="checkbox__label" tabindex="0">
+                <input type="checkbox" tabindex="-1" class="sr-only checkbox__input">
+                <span aria-checked="false" role="checkbox" class="checkbox__icon"></span>
                 <span>Публицистика</span>
               </label>
             </li>
-            <li class='checkbox__item'>
-              <label>
-                <input type='checkbox' tabindex='-1' class='sry-only checkbox__input'>
-                <span aria-checked='true' tabindex='0' role='checkbox' class='checkbox__icon'></span>
+            <li class="checkbox__item">
+              <label class="checkbox__label" tabindex="0">
+                <input type="checkbox" tabindex="-1" class="sr-only checkbox__input">
+                <span aria-checked="false" role="checkbox" class="checkbox__icon"></span>
                 <span>Путеводители</span>
               </label>
             </li>
-            <li class='checkbox__item'>
-              <label>
-                <input type='checkbox' tabindex='-1' class='sry-only checkbox__input'>
-                <span aria-checked='true' tabindex='0' role='checkbox' class='checkbox__icon'></span>
+            <li class="checkbox__item">
+              <label class="checkbox__label" tabindex="0">
+                <input type="checkbox" tabindex="-1" class="sr-only checkbox__input">
+                <span aria-checked="false" role="checkbox" class="checkbox__icon"></span>
                 <span>Философия</span>
               </label>
             </li>
-            <li class='checkbox__item'>
-              <label>
-                <input type='checkbox' tabindex='-1' class='sry-only checkbox__input'>
-                <span aria-checked='true' tabindex='0' role='checkbox' class='checkbox__icon'></span>
+            <li class="checkbox__item">
+              <label class="checkbox__label" tabindex="0">
+                <input type="checkbox" tabindex="-1" class="sr-only checkbox__input">
+                <span aria-checked="false" role="checkbox" class="checkbox__icon"></span>
                 <span>Учебная литература</span>
               </label>
             </li>
-            <li class='checkbox__item'>
-              <label>
-                <input type='checkbox' tabindex='-1' class='sry-only checkbox__input'>
-                <span aria-checked='true' tabindex='0' role='checkbox' class='checkbox__icon'></span>
+            <li class="checkbox__item">
+              <label class="checkbox__label" tabindex="0">
+                <input type="checkbox" tabindex="-1" class="sr-only checkbox__input">
+                <span aria-checked="false" role="checkbox" class="checkbox__icon"></span>
                 <span>Журналы и газеты</span>
               </label>
             </li>
@@ -654,120 +824,120 @@
         </div>
 
         <!-- Price -->
-        <div class='editions__price-filter text-light'>
-          <div class='editions__price-title'>Цена</div>
+        <div class="editions__price-filter text-light">
+          <div class="editions__price-title">Цена</div>
 
-          <div class='input-group input-group--rounded'>
-            <label for='price-min' class='input-group__prepend input-group__label'>От</label>
-            <input id='price-min' class='input-group__input' type='number' placeholder='50' min='0' step='10'>
-            <label for='price-max' class='input-group__label'>до</label>
-            <input id='price-max' class='input-group__input' type='number' placeholder='25 000' min='10' step='10'>
-            <span class='input-group__append input-group__label'>руб.</span>
+          <div class="input-group input-group--rounded">
+            <label for="price-min" class="input-group__prepend input-group__label">От</label>
+            <input id="price-min" class="input-group__input" type="number" placeholder="50" min="0" step="10">
+            <label for="price-max" class="input-group__label">до</label>
+            <input id="price-max" class="input-group__input" type="number" placeholder="25 000" min="10" step="10">
+            <span class="input-group__append input-group__label">руб.</span>
           </div>
         </div>
       </div>
 
       <!-- Right side -->
-      <div class='editions--right-side'>
+      <div class="editions--right-side">
 
-        <div class='editions-slider editions__slider text-light'>
-          <div class='editions-slider__navigation slider-nav'>
-            <button class='slider-nav__btn-prev editions-slider__btn--prev'></button>
-            <span class='slider-nav__fraction editions-slider__fraction'>N / N</span>
-            <button class='slider-nav__btn-next editions-slider__btn--next'></button>
+        <div class="editions-slider editions__slider text-light">
+          <div class="editions-slider__navigation slider-nav">
+            <button class="slider-nav__btn-prev editions-slider__btn--prev"></button>
+            <span class="slider-nav__fraction editions-slider__fraction">N / N</span>
+            <button class="slider-nav__btn-next editions-slider__btn--next"></button>
           </div>
 
-          <ul class='editions-slider__list swiper-wrapper'>
+          <ul class="editions-slider__list swiper-wrapper">
 
             <!-- 1 -->
-            <li class='editions-slider__item swiper-slide'>
-              <img class='editions-slider__img' src='assets/img/editions__slider/1.jpg' alt='Искусство цвета. Иттен, Иоханнес'>
-              <div class='editions-slider__meta'>
-                <div class='editions-slider__info'>
-                  <div class='editions-slider__title'>Искусство цвета</div>
-                  <div class='editions-slider__desc'>Иттен, Иоханнес</div>
+            <li class="editions-slider__item swiper-slide">
+              <img class="editions-slider__img" src="assets/img/editions__slider/1.jpg" alt="Искусство цвета. Иттен, Иоханнес">
+              <div class="editions-slider__meta">
+                <div class="editions-slider__info">
+                  <div class="editions-slider__title">Искусство цвета</div>
+                  <div class="editions-slider__desc">Иттен, Иоханнес</div>
                 </div>
-                <div class='editions-slider__price'>620 руб</div>
+                <div class="editions-slider__price">620 руб</div>
               </div>
-              <button class='editions-slider__btn btn btn--secondary'>Заказать</button>
+              <button class="editions-slider__btn btn btn--secondary">Заказать</button>
             </li>
 
             <!-- 2 -->
-            <li class='editions-slider__item swiper-slide'>
-              <img class='editions-slider__img' src='assets/img/editions__slider/2.jpg' alt='Типографика. Рудер, Эмиль'>
-              <div class='editions-slider__meta'>
-                <div class='editions-slider__info'>
-                  <div class='editions-slider__title'>Типографика</div>
-                  <div class='editions-slider__desc'>Рудер, Эмиль</div>
+            <li class="editions-slider__item swiper-slide">
+              <img class="editions-slider__img" src="assets/img/editions__slider/2.jpg" alt="Типографика. Рудер, Эмиль">
+              <div class="editions-slider__meta">
+                <div class="editions-slider__info">
+                  <div class="editions-slider__title">Типографика</div>
+                  <div class="editions-slider__desc">Рудер, Эмиль</div>
                 </div>
-                <div class='editions-slider__price'>2 450 руб</div>
+                <div class="editions-slider__price">2 450 руб</div>
               </div>
-              <button class='editions-slider__btn btn btn--secondary'>Заказать</button>
+              <button class="editions-slider__btn btn btn--secondary">Заказать</button>
             </li>
 
             <!-- 3 -->
-            <li class='editions-slider__item swiper-slide'>
-              <img class='editions-slider__img' src='assets/img/editions__slider/3.jpg' alt='Книга про буквы. Гордон, Юрий'>
-              <div class='editions-slider__meta'>
-                <div class='editions-slider__info'>
-                  <div class='editions-slider__title'>Книга про буквы</div>
-                  <div class='editions-slider__desc'>Гордон, Юрий</div>
+            <li class="editions-slider__item swiper-slide">
+              <img class="editions-slider__img" src="assets/img/editions__slider/3.jpg" alt="Книга про буквы. Гордон, Юрий">
+              <div class="editions-slider__meta">
+                <div class="editions-slider__info">
+                  <div class="editions-slider__title">Книга про буквы</div>
+                  <div class="editions-slider__desc">Гордон, Юрий</div>
                 </div>
-                <div class='editions-slider__price'>2 200 руб</div>
+                <div class="editions-slider__price">2 200 руб</div>
               </div>
-              <button class='editions-slider__btn btn btn--secondary'>Заказать</button>
+              <button class="editions-slider__btn btn btn--secondary">Заказать</button>
             </li>
 
             <!-- 4 -->
-            <li class='editions-slider__item swiper-slide'>
-              <img class='editions-slider__img' src='assets/img/editions__slider/4.jpg' alt='Николай Ильин. Кричевский, Владимир'>
-              <div class='editions-slider__meta'>
-                <div class='editions-slider__info'>
-                  <div class='editions-slider__title'>Николай Ильин</div>
-                  <div class='editions-slider__desc'>Кричевский, Владимир</div>
+            <li class="editions-slider__item swiper-slide">
+              <img class="editions-slider__img" src="assets/img/editions__slider/4.jpg" alt="Николай Ильин. Кричевский, Владимир">
+              <div class="editions-slider__meta">
+                <div class="editions-slider__info">
+                  <div class="editions-slider__title">Николай Ильин</div>
+                  <div class="editions-slider__desc">Кричевский, Владимир</div>
                 </div>
-                <div class='editions-slider__price'>1 100 руб</div>
+                <div class="editions-slider__price">1 100 руб</div>
               </div>
-              <button class='editions-slider__btn btn btn--secondary'>Заказать</button>
+              <button class="editions-slider__btn btn btn--secondary">Заказать</button>
             </li>
 
             <!-- 5 -->
-            <li class='editions-slider__item swiper-slide'>
-              <img class='editions-slider__img' src='assets/img/editions__slider/5.jpg' alt='Модульные сетки в граф.... Мюллер-Брокманн, Йозеф'>
-              <div class='editions-slider__meta'>
-                <div class='editions-slider__info'>
-                  <div class='editions-slider__title'>Модульные сетки в граф...</div>
-                  <div class='editions-slider__desc'>Мюллер-Брокманн, Йозеф</div>
+            <li class="editions-slider__item swiper-slide">
+              <img class="editions-slider__img" src="assets/img/editions__slider/5.jpg" alt="Модульные сетки в граф.... Мюллер-Брокманн, Йозеф">
+              <div class="editions-slider__meta">
+                <div class="editions-slider__info">
+                  <div class="editions-slider__title">Модульные сетки в граф...</div>
+                  <div class="editions-slider__desc">Мюллер-Брокманн, Йозеф</div>
                 </div>
-                <div class='editions-slider__price'>1 450 руб</div>
+                <div class="editions-slider__price">1 450 руб</div>
               </div>
-              <button class='editions-slider__btn btn btn--secondary'>Заказать</button>
+              <button class="editions-slider__btn btn btn--secondary">Заказать</button>
             </li>
 
             <!-- 6 -->
-            <li class='editions-slider__item swiper-slide'>
-              <img class='editions-slider__img' src='assets/img/editions__slider/6.jpg' alt='Эволюция графических ст... Хеллер, Чваст'>
-              <div class='editions-slider__meta'>
-                <div class='editions-slider__info'>
-                  <div class='editions-slider__title'>Эволюция графических ст...</div>
-                  <div class='editions-slider__desc'>Хеллер, Чваст</div>
+            <li class="editions-slider__item swiper-slide">
+              <img class="editions-slider__img" src="assets/img/editions__slider/6.jpg" alt="Эволюция графических ст... Хеллер, Чваст">
+              <div class="editions-slider__meta">
+                <div class="editions-slider__info">
+                  <div class="editions-slider__title">Эволюция графических ст...</div>
+                  <div class="editions-slider__desc">Хеллер, Чваст</div>
                 </div>
-                <div class='editions-slider__price'>3 200 руб</div>
+                <div class="editions-slider__price">3 200 руб</div>
               </div>
-              <button class='editions-slider__btn btn btn--secondary'>Заказать</button>
+              <button class="editions-slider__btn btn btn--secondary">Заказать</button>
             </li>
 
             <!-- 7 -->
-            <li class='editions-slider__item swiper-slide'>
-              <img class='editions-slider__img' src='assets/img/editions__slider/7.jpg' alt='Искусство и визуальное в... Арнхейм, Рудольф'>
-              <div class='editions-slider__meta'>
-                <div class='editions-slider__info'>
-                  <div class='editions-slider__title'>Искусство и визуальное в...</div>
-                  <div class='editions-slider__desc'>Арнхейм, Рудольф</div>
+            <li class="editions-slider__item swiper-slide">
+              <img class="editions-slider__img" src="assets/img/editions__slider/7.jpg" alt="Искусство и визуальное в... Арнхейм, Рудольф">
+              <div class="editions-slider__meta">
+                <div class="editions-slider__info">
+                  <div class="editions-slider__title">Искусство и визуальное в...</div>
+                  <div class="editions-slider__desc">Арнхейм, Рудольф</div>
                 </div>
-                <div class='editions-slider__price'>2 200 руб</div>
+                <div class="editions-slider__price">2 200 руб</div>
               </div>
-              <button class='editions-slider__btn btn btn--secondary'>Заказать</button>
+              <button class="editions-slider__btn btn btn--secondary">Заказать</button>
             </li>
           </ul>
         </div>
@@ -778,105 +948,111 @@
   </section>
 
   <!-- Projects -->
-  <section id='projects' class='projects'>
-    <div class='container projects__container'>
-      <h2 class='section-title'>Проекты</h2>
+  <section id="projects" class="projects">
+    <div class="container projects__container">
+      <h2 class="section-title">Проекты</h2>
 
-      <p class='section-desc'>Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности
+      <p class="section-desc">Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности
         однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые государства
         смешаны с не уникальными данными до степени совершенной неузнаваемости, из-за чего возрастает их статус
-        бесполезности. Прежде всего, постоянное информационно-пропагандистское <span class='tooltip'></span>
+        бесполезности. Прежде всего, постоянное информационно-пропагандистское
+        <span class="tooltip" tabindex="0">
+          <span class="tooltip__body">Пример современных тенденций - современная методология разработки</span>
+        </span>
         обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности
-        принимаемых решений. И нет сомнений, что действия представителей оппозиции могут быть рассмотрены <span class='tooltip'></span>
-        исключительно в разрезе маркетинговых и финансовых <span class='tooltip'></span> предпосылок.
-        Банальные, но неопровержимые выводы, а также представители современных социальных резервов призывают нас к
-        новым свершениям, которые, в свою очередь, должны быть смешаны с не уникальными данными до степени
-        совершенной неузнаваемости.
-        Подробнее: <a href='https://blanchard-art.ru/projects/about'>blanchard-art.ru/projects/about</a></p>
+        принимаемых решений. И нет сомнений, что действия представителей оппозиции могут быть рассмотрены
+        <span class="tooltip" tabindex="0">
+          <span class="tooltip__body">В стремлении повысить качество</span>
+        </span> исключительно в разрезе маркетинговых и финансовых
+        <span class="tooltip" tabindex="0">
+          <span class="tooltip__body">Приятно, граждане, наблюдать, как сделанные на базе аналитики выводы вызывают у вас эмоции</span>
+        </span> предпосылок. Банальные, но неопровержимые выводы, а также представители современных социальных резервов призывают нас к
+        новым свершениям, которые, в свою очередь, должны быть смешаны с не уникальными данными до степени совершенной неузнаваемости.
+        Подробнее: <a class="link-primary" href="#0">blanchard-art.ru/projects/about</a></p>
     </div>
 
-    <div class='projects-partners'>
-      <div class='container projects-partners__container'>
-        <h3 class='projects-partners__title'>Партнёры проектов:</h3>
+    <div class="projects-partners">
+      <div class="container projects-partners__container">
+        <h3 class="projects-partners__title">Партнёры проектов:</h3>
 
-        <div class='projects-partners__slider'>
-          <div class='projects-partners__slider-container swiper-container'>
-            <ul class='projects-partners__list swiper-wrapper'>
-              <li class='projects-partners__item swiper-slide'>
-                <img src='assets/img/partners__slider/partner__1.svg' alt='Company 1'>
+        <div class="projects-partners__slider">
+          <div class="projects-partners__slider-container swiper-container">
+            <ul class="projects-partners__list swiper-wrapper">
+              <li class="projects-partners__item swiper-slide">
+                <img src="assets/img/partners__slider/partner__1.svg" alt="Company 1">
               </li>
-              <li class='projects-partners__item swiper-slide'>
-                <img src='assets/img/partners__slider/partner__2.svg' alt='Company 2'>
+              <li class="projects-partners__item swiper-slide">
+                <img src="assets/img/partners__slider/partner__2.svg" alt="Company 2">
               </li>
-              <li class='projects-partners__item swiper-slide'>
-                <img src='assets/img/partners__slider/partner__3.svg' alt='Company 3'>
+              <li class="projects-partners__item swiper-slide">
+                <img src="assets/img/partners__slider/partner__3.svg" alt="Company 3">
               </li>
-              <li class='projects-partners__item swiper-slide'>
-                <img src='assets/img/partners__slider/partner__4.svg' alt='Company 4'>
+              <li class="projects-partners__item swiper-slide">
+                <img src="assets/img/partners__slider/partner__4.svg" alt="Company 4">
               </li>
-              <li class='projects-partners__item swiper-slide'>
-                <img src='assets/img/partners__slider/partner__5.svg' alt='Company 5'>
+              <li class="projects-partners__item swiper-slide">
+                <img src="assets/img/partners__slider/partner__5.svg" alt="Company 5">
               </li>
-              <li class='projects-partners__item swiper-slide'>
-                <img src='assets/img/partners__slider/partner__6.svg' alt='Company 6'>
+              <li class="projects-partners__item swiper-slide">
+                <img src="assets/img/partners__slider/partner__6.svg" alt="Company 6">
               </li>
-              <li class='projects-partners__item swiper-slide'>
-                <img src='assets/img/partners__slider/partner__7.svg' alt='Company 7'>
+              <li class="projects-partners__item swiper-slide">
+                <img src="assets/img/partners__slider/partner__7.svg" alt="Company 7">
               </li>
-              <li class='projects-partners__item swiper-slide'>
-                <img src='assets/img/partners__slider/partner__8.svg' alt='Company 8'>
+              <li class="projects-partners__item swiper-slide">
+                <img src="assets/img/partners__slider/partner__8.svg" alt="Company 8">
               </li>
-              <li class='projects-partners__item swiper-slide'>
-                <img src='assets/img/partners__slider/partner__9.svg' alt='Company 9'>
+              <li class="projects-partners__item swiper-slide">
+                <img src="assets/img/partners__slider/partner__9.svg" alt="Company 9">
               </li>
             </ul>
           </div>
-          <button class='projects-partners__btn projects-partners__btn--prev'></button>
-          <button class='projects-partners__btn projects-partners__btn--next'></button>
+          <button class="projects-partners__btn projects-partners__btn--prev"></button>
+          <button class="projects-partners__btn projects-partners__btn--next"></button>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contacts -->
-  <section id='contacts' class='contacts'>
-    <div class='container'>
-      <h2 class='section-title'>Контакты</h2>
+  <section id="contacts" class="contacts">
+    <div class="container contacts__container">
+      <h2 class="section-title">Контакты</h2>
     </div>
 
-    <div class='contacts__wrapper'>
-      <div class='contacts__actions'>
+    <div class="contacts__wrapper">
+      <div class="contacts__actions">
         <!-- Address -->
-        <div class='contacts__address address'>
-          <div class='address__title'>Шоурум №4</div>
-          <div class='address__desc'>Леонтьевский переулок, дом 5, строение 1</div>
+        <div class="contacts__address address">
+          <div class="address__title">Шоурум №4</div>
+          <div class="address__desc">Леонтьевский переулок, дом 5, строение 1</div>
         </div>
 
         <!-- Call form -->
-        <form class='contacts__form call-form'>
-          <h4 class='call-form__title'>Заказать обратный звонок</h4>
+        <form class="contacts__form call-form">
+          <h4 class="call-form__title">Заказать обратный звонок</h4>
           <label>
-            <input type='text' class='call-form__input' name='user__name' placeholder='Имя*' required>
+            <input type="text" class="call-form__input" name="user__name" placeholder="Имя*" required>
           </label>
 
           <label>
-            <input type='tel' class='call-form__input' name='user__name' placeholder='Телефон*' required>
+            <input type="tel" class="call-form__input" name="user__name" placeholder="Телефон*" required>
           </label>
 
-          <button class='call-form__submit btn btn--secondary'>Заказать</button>
+          <button class="call-form__submit btn btn--secondary">Заказать</button>
         </form>
 
         <!-- Contact icons -->
-        <div class='contact-icons'>
-          <h4 class='contact-icons__title'>Связаться в один клик</h4>
-          <ul class='contact-icons__list'>
-            <li class='contact-icons__item contact-icons__item--wt'></li>
-            <li class='contact-icons__item contact-icons__item--tg'></li>
+        <div class="contact-icons">
+          <h4 class="contact-icons__title">Связаться в один клик</h4>
+          <ul class="contact-icons__list">
+            <li class="contact-icons__item contact-icons__item--wt"></li>
+            <li class="contact-icons__item contact-icons__item--tg"></li>
           </ul>
         </div>
       </div>
 
-      <div class='contact__map'></div>
+      <div class="contact__map"></div>
     </div>
 
   </section>
@@ -884,18 +1060,16 @@
 </main>
 
 <!-- Footer -->
-<footer class='footer'>
-  <div class='container footer__container'>
-    <div class='logo'>
-      <a href='#top' class='footer__link footer__logo-link'>
-        <img src='assets/icon/logo.svg' class='logo__img footer__logo-img' alt='Blanchard logo'>
-      </a>
-    </div>
+<footer class="footer">
+  <div class="container footer__container">
+    <a href="#top">
+      <img src="assets/icon/logo.svg" alt="Blanchard logo">
+    </a>
 
-    <ul class='social-icons'>
-      <li class='social-icons__item social-icons__item--vk'></li>
-      <li class='social-icons__item social-icons__item--inst'></li>
-      <li class='social-icons__item social-icons__item--fb'></li>
+    <ul class="social-icons">
+      <li class="social-icons__item social-icons__item--vk"></li>
+      <li class="social-icons__item social-icons__item--inst"></li>
+      <li class="social-icons__item social-icons__item--fb"></li>
     </ul>
   </div>
 </footer>

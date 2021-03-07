@@ -26,10 +26,6 @@ body {
   scroll-behavior: smooth;
 }
 
-label {
-  cursor: pointer;
-}
-
 input,
 button {
   padding: 0;
@@ -66,7 +62,7 @@ figure {
   padding: 0;
 }
 
-.sry-only {
+.sr-only {
   position: absolute;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
@@ -76,20 +72,65 @@ figure {
   padding: 0;
 }
 
+.link-primary {
+  border: 2px solid transparent;
+  transition: 0.3s all;
+  transition-property: color, border-color;
+
+  &:hover {
+    color: var(--purple);
+  }
+
+  &:active {
+    color: var(--purple-dark);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    border-color: var(--outline-color);
+    outline: none;
+    transition: 0s all;
+  }
+}
+
 .btn {
   display: inline-block;
   padding: 16px 26px;
   border-radius: 100px;
   font-weight: 700;
   cursor: pointer;
+  transition: 0.3s;
+  transition-property: color, border-color, background-color;
 
   &--primary {
+    border: 3px solid transparent;
     background: var(--purple);
     color: var(--white, #fff);
+
+    &:hover {
+      border-color: var(--purple-light);
+      outline: none;
+    }
+
+    &:active {
+      background-color: var(--purple-dark);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      border-style: double;
+      border-color: var(--purple-light);
+    }
   }
 
   &--secondary {
-    border: 2px solid var(--purple);
+    border: 2px solid var(--outline-color);
     color: var(--purple);
     transition: 0.1s all;
     transition-property: background-color, color;
@@ -98,10 +139,23 @@ figure {
       background-color: var(--purple);
       color: var(--white);
     }
+
+    &:active {
+      background-color: var(--purple-dark);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      border-style: double;
+      border-color: var(--purple-light);
+    }
   }
 }
 
-// make yan max grayscale
+// make yan map grayscale
 [class*=-ground-pane] {
   filter: grayscale(1);
 }

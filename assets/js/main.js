@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const map = document.createElement('div');
 
     map.id = 'map';
-    map.style.width = '1230px';
+    map.style.width = '1238px';
     map.style.height = '700px';
 
     container.append(map);

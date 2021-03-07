@@ -32,7 +32,7 @@
   }
 
   &__nav {
-    margin-right: 105px;
+    margin-right: 96px;
   }
 
   &__list {
@@ -45,14 +45,14 @@
     font-size: 1.125rem;
 
     &:not(:last-child) {
-      margin-right: 62px;
+      margin-right: 58px;
     }
 
     &--dropdown {
       font-size: 1.125rem;
 
       &:not(:last-child) {
-        margin-right: 99px;
+        margin-right: 94px;
       }
     }
   }
@@ -64,30 +64,31 @@
 
 // Hero
 .hero {
-  min-height: 800px;
   background: url('../img/hero-1.jpg') no-repeat center;
   background-size: cover;
   color: var(--white, #fff);
 
+  &__container {
+    padding-top: 242px;
+    padding-bottom: 123px;
+  }
+
   &__title {
     max-width: 600px;
-    margin: 0 0 0 -5px;
-    padding-top: 242px;
+    margin: 0 0 21px -5px;
     font-size: 4.5rem;
   }
 
   &__desc {
     max-width: 580px;
-    margin: 0;
-    padding-top: 21px;
+    margin: 0 0 90px 0;
     font-weight: 700;
     font-size: 1.125rem;
     line-height: 1.7;
   }
 
   &__btn {
-    margin-top: 90px;
-    padding: 26px 36px;
+    padding: 23px 34px;
     font-size: 1.125rem;
   }
 }
@@ -95,6 +96,7 @@
 // About
 .about {
   &__container {
+    padding-top: 85px;
     padding-bottom: 70px;
   }
 }
@@ -122,12 +124,9 @@
   }
 
   &__title {
+    margin-bottom: 30px;
     padding: 0;
     color: var(--white, #fff);
-  }
-
-  &__filter {
-    padding-top: 10px;
   }
 
   &__slider {
@@ -135,18 +134,63 @@
     grid-area: slider;
     overflow: hidden;
     width: 100%;
-    max-width: 1150px; // fix
+    max-width: 1150px;
     height: 100%;
   }
 
   &__item {
+    position: relative;
     height: auto;
+    max-height: 350px;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: 0.3s opacity, 0s border-color;
+
+    &:active {
+      border-color: var(--purple-light);
+    }
+
+    &:focus {
+      border-color: var(--outline-color);
+      outline: none;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0;
+      transition: 0.3s opacity;
+    }
+
+    &::before {
+      z-index: 1;
+      background-color: rgba(194, 131, 243, 0.4);
+    }
+
+    &::after {
+      z-index: 2;
+      width: calc(100% - 60px);
+      height: calc(100% - 60px);
+      margin: auto;
+      background: rgba(0, 0, 0, 0.5) url('../icon/zoom-in.svg') center no-repeat;
+    }
+
+    &:active::before,
+    &:focus::before,
+    &:hover::after {
+      opacity: 1;
+    }
   }
 
   &__img {
-    width: auto; // fix
-    max-width: 350px; // fix
-    max-height: 350px; // fix
+    position: relative;
+    object-fit: cover;
+    width: auto;
   }
 
   &__navigation {
@@ -166,20 +210,25 @@
 // Catalog
 .catalog {
   &__container {
+    &--top {
+      padding-top: 85px;
+      padding-bottom: 37px;
+    }
+
     &--bottom {
       display: flex;
-      padding-top: 40px;
     }
   }
 
   &__header {
     display: flex;
     align-items: flex-start;
-    padding-top: 85px;
+    margin-bottom: 16px;
   }
 
   &__title {
     margin-right: 30px;
+    margin-bottom: 0;
     padding: 0;
   }
 
@@ -195,6 +244,10 @@
 // Events
 .events {
   margin-bottom: 80px;
+
+  &__container {
+    padding-top: 85px;
+  }
 
   &__title {
     margin-bottom: 20px;
@@ -213,7 +266,7 @@
     display: block;
     margin-right: auto;
     margin-left: auto;
-    padding: 19px 34px;
+    padding: 18px 34px;
     font-size: 1.1rem;
   }
 }
@@ -226,7 +279,7 @@
   &__container {
     display: flex;
     justify-content: space-between;
-    padding: 83px 13px 75px 13px;
+    padding: 83px 13px 75px 15px;
   }
 
   &__title {
@@ -239,11 +292,9 @@
     margin-bottom: 40px;
   }
 
-  &__price {
-    &-title {
-      margin-bottom: 18px;
-      font-weight: 700;
-    }
+  &__price-title {
+    margin-bottom: 16px;
+    font-weight: 700;
   }
 
   &--right-side {
@@ -259,6 +310,7 @@
 .projects {
   &__container {
     margin-bottom: 25px;
+    padding-top: 85px;
   }
 
   &-partners {
@@ -278,7 +330,6 @@
     &__list {
       width: 100%;
       margin: auto;
-      //padding: 0 50px;
     }
 
     &__item {
@@ -328,6 +379,10 @@
 
 // Contacts
 .contacts {
+  &__container {
+    padding-top: 85px;
+  }
+
   &__wrapper {
     display: flex;
     justify-content: space-between;
@@ -335,8 +390,11 @@
 
   &__actions {
     width: 100%;
-    max-width: 670px;
-    padding: 130px 118px 120px 152px
+    max-width: 682px;
+    padding: 126px 121px 123px 159px;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    border-color: #cacaca;
   }
 
   &__address {

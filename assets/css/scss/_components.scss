@@ -2,14 +2,14 @@
 @import 'mixins/hide-input-number-arrow';
 
 .placeholder {
-  max-width: 740px;
-  margin: 24px auto;
   font-family: sans-serif;
   text-align: justify;
   pointer-events: none;
   user-select: none;
 
   &__word {
+    display: inline-block;
+    margin-bottom: 8px;
     border-radius: 3px;
     background: #eee;
     color: transparent;
@@ -22,7 +22,7 @@
 .section {
   &-title {
     margin: 0 0 20px 0;
-    padding-top: 85px;
+    //padding-top: 85px;
     color: var(--dark);
     font-weight: 400;
     font-size: 3rem;
@@ -32,6 +32,53 @@
     max-width: 1080px;
     margin: 0;
     line-height: 2;
+  }
+}
+
+// Tooltip
+.tooltip {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: url('../icon/tooltip.svg') center no-repeat;
+  cursor: help;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 12px;
+    border: 8px solid transparent;
+    border-top: 8px solid #cacaca;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &__body {
+    position: absolute;
+    bottom: 28px;
+    left: -125px;
+    display: inline-block;
+    width: max-content;
+    max-width: 264px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: #cacaca;
+    color: var(--white);
+    font-size: 0.75rem;
+    line-height: 1rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+    content-visibility: auto;
+  }
+
+  &:focus::before,
+  &:focus &__body,
+  &:hover::before,
+  &:hover &__body {
+    opacity: 1;
   }
 }
 
@@ -67,11 +114,21 @@
     width: 22px;
     height: 22px;
     margin-right: 5px;
-    background-image: url('../icon/search.svg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    color: var(--white);
     cursor: pointer;
+    transition: 0.3s color;
+
+    &:hover {
+      color: var(--purple);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--outline-color);
+    }
   }
 
   &__input {
@@ -80,6 +137,16 @@
     border-bottom: 1px solid var(--white, #fff);
     color: var(--white, #fff);
     font-size: 18px;
+    caret-color: var(--purple);
+    transition: 150ms border-color;
+
+    &:hover {
+      border-color: var(--outline-color);
+    }
+
+    &:focus {
+      outline: none;
+    }
 
     &::placeholder {
       color: var(--white, #fff);
@@ -92,13 +159,14 @@
   user-select: none;
 
   &__desc {
+    margin-bottom: 16px;
     font-weight: 600;
   }
 
   &__header,
   &__option {
     cursor: pointer;
-    transition: 60ms all;
+    transition: 120ms all;
     transition-property: border-color, color, background, transform;
 
     @include hover {
@@ -109,13 +177,26 @@
   }
 
   &__header {
-    margin: 16px 0 -1px;
+    position: relative;
+    margin-bottom: -1px;
     padding: 10px 15px;
     border: 1px solid #fff;
     border-radius: 6px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 11px;
+      right: 13px;
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: url('../icon/dropdown-arrow-down-white.svg') center no-repeat;
+    }
   }
 
   &__body {
+    display: none;
     margin: 0;
     border-color: var(--gray);
     color: var(--gray);
@@ -164,7 +245,7 @@
     }
 
     &.selected {
-      border-color: var(--purple);
+      border-color: var(--outline-color);
     }
   }
 
@@ -211,7 +292,7 @@
     }
 
     &--opened {
-      border-bottom-color: var(--purple);
+      border-bottom-color: var(--outline-color);
     }
 
     &::before {
@@ -235,8 +316,9 @@
   &__btn {
     position: relative;
     width: 100%;
-    padding: 44px 0;
+    padding: 43px 0;
     border-bottom: 1px solid transparent;
+    font-weight: 600;
     font-size: 1.5rem;
     text-align: left;
     cursor: pointer;
@@ -264,7 +346,7 @@
   }
 
   &__item--opened &__btn {
-    border-bottom-color: var(--purple);
+    border-bottom-color: var(--outline-color);
 
     &::after {
       transform: rotate(180deg);
@@ -285,12 +367,12 @@
     //content-visibility: auto;
 
     &-content {
-      padding: 32px 0;
+      padding: 30px 0 60px;
     }
   }
 
   &__item--opened &__body {
-    max-height: 300px;
+    max-height: 340px;
   }
 
   &__option {
@@ -298,12 +380,11 @@
     flex-wrap: wrap;
     width: 30%;
     margin-right: 15px;
-    text-align: left;
     cursor: pointer;
     transition: 0.2s color;
 
     &:not(:last-child) {
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
 
     &:hover,
@@ -358,7 +439,7 @@
   &__link {
     margin-top: 90px;
     padding-bottom: 3px;
-    border-bottom: 1px solid var(--purple);
+    border-bottom: 1px solid var(--outline-color);
     color: var(--purple);
     cursor: pointer;
   }
@@ -366,9 +447,6 @@
 
 // Checkbox
 .checkbox {
-  display: flex;
-  flex-direction: column;
-
   &__title {
     margin-bottom: 14px;
     font-weight: 700;
@@ -382,14 +460,24 @@
     }
   }
 
-  &__img {
-    padding: 8px;
-    border: 2px solid transparent;
-    border-radius: 50%;
-    transition: 0.1s border-color;
+  &__label {
+    cursor: pointer;
+    transition: 0.1s color;
 
-    @include hover {
-      border-color: var(--gray-light);
+    &:hover {
+      color: var(--purple-light);
+    }
+
+    &:active {
+      color: var(--purple-dark);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--purple);
     }
   }
 
@@ -412,21 +500,25 @@
       height: 4px;
       margin: auto;
       border-radius: 50%;
-      background-color: transparent;
-      transition: 0.1s background-color;
-    }
-
-    &:focus {
-      outline: none;
-
-      &::after {
-        background-color: #fff;
-      }
+      background-color: var(--purple-light);
+      opacity: 0;
+      transition: 0.1s opacity;
     }
   }
 
-  &__item:hover &__icon::after {
-    background-color: var(--white);
+  // hover
+  &__label:hover &__icon::after {
+    opacity: 1;
+  }
+
+  // active
+  &__label:active &__icon::after {
+    opacity: 0;
+  }
+
+  // checked
+  &__input:checked + * + span {
+    color: var(--purple);
   }
 
   &__input:checked + &__icon {
@@ -434,6 +526,7 @@
 
     &::after {
       background-color: var(--purple);
+      opacity: 1;
     }
   }
 }
@@ -555,12 +648,13 @@
 
   &__btn {
     padding: 10px 20px;
+    color: var(--white);
   }
 }
 
 .address {
   &__title {
-    margin-bottom: 10px;
+    margin-bottom: 13px;
     font-size: 1.5rem;
   }
 }
@@ -659,24 +753,22 @@
     color: var(--white);
     font-weight: 400;
     letter-spacing: 1px;
+  }
 
-    &::after {
-      content: '';
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      margin-left: 4px;
-      background-image: url('../icon/dropdown-arrow-down.svg');
-      background-position: center;
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
+  &__icon {
+    transition: 0.3s transform;
+  }
+
+  &__header.active &__icon {
+    transform: rotate(180deg);
   }
 
   &__list {
     position: absolute;
-    top: 44px;
+    top: 45px;
     display: none;
+    overflow-y: scroll;
+    max-height: 300px;
     padding: 40px;
     background: rgba(0, 0, 0, 0.6);
     content-visibility: auto;
@@ -686,25 +778,45 @@
     }
   }
 
-  &__item {
-    &:not(:last-child) {
-      margin-bottom: 20px;
-    }
+  &__item:not(:last-child) {
+    margin-bottom: 20px;
   }
 
   &__link {
+    position: relative;
     display: block;
     width: 100%;
     min-width: 220px;
     padding-top: 9px;
     padding-bottom: 12px;
     padding-left: 14px;
-    border: 2px solid transparent;
     background-size: cover;
     background-repeat: no-repeat;
     color: var(--white);
     font-weight: 400;
     font-size: 0.875rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(194, 131, 243, 0.4);
+      opacity: 0;
+      transition: 0.3s all;
+      transition-property: opacity, outline-color;
+    }
+
+    &:hover,
+    &:focus {
+      outline: 2px solid var(--outline-color);
+    }
+
+    &:focus::after {
+      opacity: 1;
+    }
 
     &--tintoretto {
       background-image: url('../img/header__dropdown/dropdown__1.1.jpg');
