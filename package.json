@@ -1,14 +1,9 @@
 {
   "name": "blanchard",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "watch": "live-server --no-browser"
+    "dev": "node ./index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "eslint": "latest",
     "eslint-config-google": "latest",

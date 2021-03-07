@@ -1,10 +1,13 @@
 :root {
   --black: #000;
   --white: #fff;
+  --purple-light: #d1a9f0;
   --purple: #9d5cd0;
+  --purple-dark: #7943a4;
   --gray: #999;
   --dark: #333;
   --gray-light: #999;
   // default
   --primary: var(--black);
+  --outline-color: var(--purple);
 }
