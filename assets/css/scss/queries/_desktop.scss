@@ -211,8 +211,8 @@
 .catalog {
   &__container {
     &--top {
+      margin-bottom: 40px;
       padding-top: 85px;
-      padding-bottom: 37px;
     }
 
     &--bottom {
@@ -339,7 +339,7 @@
       max-width: 450px;
       height: auto;
       padding: 37px 0;
-      border: 1px solid #cacaca;
+      border: 1px solid var(--gray-light);
       opacity: 0.5;
       filter: grayscale(1);
       transition: 0.5s all;
@@ -394,7 +394,7 @@
     padding: 126px 121px 123px 159px;
     border-width: 1px 1px 1px 1px;
     border-style: solid;
-    border-color: #cacaca;
+    border-color: var(--gray-light);
   }
 
   &__address {

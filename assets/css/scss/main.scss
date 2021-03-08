@@ -3,11 +3,3 @@
 @import 'components';
 @import 'fonts';
 @import 'queries/desktop';
-
-%outline, * {
-  outline: unset;
-
-  &:focus {
-    outline: 3px auto;
-  }
-}

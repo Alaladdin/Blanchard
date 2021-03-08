@@ -12,6 +12,10 @@
   &::-webkit-scrollbar-thumb {
     background-color: var(--white);
   }
+
+  &:focus {
+    outline: 3px solid var(--outline-color);
+  }
 }
 
 html,
@@ -102,7 +106,7 @@ figure {
   border-radius: 100px;
   font-weight: 700;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.3s all;
   transition-property: color, border-color, background-color;
 
   &--primary {
@@ -112,7 +116,6 @@ figure {
 
     &:hover {
       border-color: var(--purple-light);
-      outline: none;
     }
 
     &:active {

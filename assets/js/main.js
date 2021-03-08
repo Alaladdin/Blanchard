@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const activeToggler = () => document.querySelector('.dropdown__header.active');
+  const activeDropdown = () => document.querySelector('.dropdown__list.show');
+  const dropdowns = document.querySelectorAll('.dropdown');
+  const catalogLangBtn = document.querySelectorAll('.language-picker__btn');
+
   // Gallery slider config
   new Swiper('.gallery__slider', {
     preloadImages: true,
@@ -53,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Map
-
   const createMap = () => {
     const container = document.querySelector('.contact__map');
     const map = document.createElement('div');
@@ -71,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
         controls: [],
       });
 
-      // Добавляем круг на карту.
       const myCircle = new ymaps.Circle([[55.758463, 37.601079], 22], {}, {
         fillColor: '#9d5cd0',
         strokeWidth: 0,
@@ -81,11 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  createMap();
-
   // Change catalog lang
-  const catalogLangBtn = document.querySelectorAll('.language-picker__btn');
-
   catalogLangBtn.forEach((btn) => btn.addEventListener('click', () => {
     const selectedLang = btn.dataset.lang;
     const selectedBtn = document.querySelector('.language-picker__btn.selected');
@@ -97,95 +96,110 @@ document.addEventListener('DOMContentLoaded', () => {
   }));
 
   // Dropdowns
-  {
-    const activeToggler = () => document.querySelector('.dropdown__header.active');
-    const activeDropdown = () => document.querySelector('.dropdown__list.show');
-    const dropdowns = document.querySelectorAll('.dropdown');
+  document.addEventListener('click', (e) => {
+    const allowedClasses = ['dropdown', 'dropdown__header', 'dropdown__list'];
 
-    document.addEventListener('click', (e) => {
-      const allowedClasses = ['dropdown', 'dropdown__header', 'dropdown__list'];
+    // if clicked inside allowed classes -> do nothing
+    if (!allowedClasses.includes(e.target.classList[0])) {
+      if (activeToggler()) hideDropdown();
+    }
+  });
 
-      // if clicked inside allowed classes -> do nothing
-      if (!allowedClasses.includes(e.target.classList[0])) {
-        if (activeToggler()) hideDropdown();
-      }
+  const hideDropdown = () => {
+    if (activeToggler()) activeToggler().classList.remove('active');
+    if (activeDropdown()) activeDropdown().classList.remove('show');
+  };
+
+  dropdowns.forEach((dropdown) => {
+    const toggler = dropdown.querySelector('.dropdown__header');
+    const dropdownList = dropdown.querySelector('.dropdown__list');
+
+    toggler.addEventListener('click', function(e) {
+      if (this !== activeToggler()) hideDropdown();
+
+      dropdownList.classList.toggle('show');
+      toggler.classList.toggle('active');
     });
+  });
 
-    const hideDropdown = () => {
-      if (activeToggler()) activeToggler().classList.remove('active');
-      if (activeDropdown()) activeDropdown().classList.remove('show');
+  const accordionInit = () => {
+    const accordionItems = document.querySelectorAll('.accordion__item');
+
+    // accordion items
+    accordionItems.forEach((item) => {
+      const toggler = item.querySelector('.accordion__btn');
+      const accordionOptions = item.querySelectorAll('.accordion__option');
+
+      // item onclick
+      toggler.addEventListener('click', () => {
+        item.classList.toggle('accordion__item--opened');
+      });
+
+      // change option
+      accordionOptions.forEach((option) => {
+        option.addEventListener('click', () => {
+          const selectedClass = 'accordion__option--selected';
+          const selectedOption = document.querySelector(`.${selectedClass}`);
+
+          if (selectedOption) selectedOption.classList.remove(selectedClass);
+          option.classList.add(selectedClass);
+        });
+      });
+    });
+  };
+
+  // gallery dropdown filter
+  const galleryFilterInit = () => {
+    const filter = document.querySelector('.filter');
+    const filterHeader = filter.querySelector('.filter__header');
+    const filterBody = filter.querySelector('.filter__body');
+    const filterOptions = filterBody.querySelectorAll('.filter__option');
+
+    // toggle filter
+    const toggleFilter = () => {
+      const isOpened = filterBody.classList.contains('is-opened');
+
+      filterHeader.classList.toggle('is-active');
+      filterBody.classList.toggle('is-opened');
+      filter.setAttribute('aria-expanded', (!isOpened).toString());
     };
 
-    dropdowns.forEach((dropdown) => {
-      const toggler = dropdown.querySelector('.dropdown__header');
-      const dropdownList = dropdown.querySelector('.dropdown__list');
+    // change option
+    const changeOption = (option) => {
+      filter.querySelectorAll('.filter__option.selected').forEach((optionSelected) => {
+        optionSelected.removeAttribute('aria-selected');
+        optionSelected.classList.remove('selected');
+      });
 
-      toggler.addEventListener('click', function(e) {
-        if (this !== activeToggler()) hideDropdown();
+      option.setAttribute('aria-selected', 'true');
+      option.classList.add('selected');
 
-        dropdownList.classList.toggle('show');
-        toggler.classList.toggle('active');
+      filterHeader.textContent = option.textContent;
+    };
+
+    document.querySelectorAll('[role="option"]').forEach(function(button) {
+      button.addEventListener('keydown', function(e) {
+        if (e.keyCode === 13) button.click();
       });
     });
-  }
 
-  /**
-   * Accordion init function
-   * @param {string} el some number
-   */
-  function accordion(el) {
-    if (el.length <= 0) {
-      console.error('[Accordion] \'element\' param is empty');
-      return;
-    }
-
-    const accordionItems = document.querySelectorAll(`${el}__item`);
-
-    accordionItems.forEach((item) => {
-      const btn = item.querySelector(`${el}__btn`);
-      // const body = item.querySelector(`${el}__body`);
-
-      item.setAttribute('tabindex', '0'); // Чтобы не перехватывал фокус таба
-
-      btn.onclick = () => {
-        item.classList.toggle(`${el.slice(1)}__item--opened`);
-      };
+    // filter header onclick
+    filterHeader.addEventListener('click', () => {
+      toggleFilter();
     });
 
-    /**
-     * Collapsing section
-     * @param {string} element
-     */
-    function collapseSection(element) {
-      const sectionHeight = element.scrollHeight;
-      const elementTransition = element.style.transition;
-
-      element.style.transition = '';
-
-      requestAnimationFrame(() => {
-        element.style.height = `${sectionHeight}px`;
-        element.style.transition = elementTransition;
-
-        requestAnimationFrame(() => element.style.height = '0');
+    // filter options
+    filterOptions.forEach((option) => {
+      option.setAttribute('tabindex', '0');
+      option.addEventListener('click', () => {
+        changeOption(option);
+        toggleFilter();
       });
-    }
+    });
+  };
 
-    /**
-     * Collapsing section
-     * @param {string} element
-     */
-    function expandSection(element) {
-      const sectionHeight = element.scrollHeight;
-      element.style.height = `${sectionHeight}px`;
-
-      element.addEventListener('transitionend', function transitionEnd(e) {
-        element.removeEventListener('transitionend', transitionEnd.callee);
-        element.style.height = null;
-      });
-    }
-  }
-
-  accordion('.accordion');
+  // Init
+  galleryFilterInit();
+  accordionInit();
+  createMap();
 });
-
-

@@ -243,12 +243,13 @@
         <h2 class="gallery__title section-title">Галерея</h2>
 
         <!-- Filter -->
-        <div class="filter gallery__filter">
+        <div class="filter gallery__filter" role="listbox" aria-expanded="false">
           <div class="filter__desc">Фильтровать по:</div>
-          <div class="filter__header">Автор</div>
+          <button class="filter__header">Автор</button>
           <ul class="filter__body">
-            <li class="filter__option">Направление</li>
-            <li class="filter__option">Техника</li>
+            <li class="filter__option" role="option" data-value="Направление">Направление</li>
+            <li class="filter__option" role="option" data-value="Техника">Техника</li>
+            <li class="filter__option selected" role="option" data-value="Автор" aria-selected="true">Автор</li>
           </ul>
         </div>
       </div>
@@ -425,42 +426,78 @@
 
       <!-- Accordion -->
       <ul class="accordion catalog__accordion">
-        <!-- 1 -->
         <li class="accordion__item accordion__item--opened">
-          <button class="accordion__btn">C 1400 по 1499 гг.</button>
+          <button class="accordion__btn">
+            <span class="accordion__title">C 1400 по 1499 гг.</span>
+            <span class="accordion__icon"></span>
+          </button>
           <div class="accordion__body">
             <div class="accordion__body-content">
-              <button class="accordion__option link-primary">Бенедетто ди Биндо</button>
-              <button class="accordion__option link-primary">Бергоньоне, Амброджо</button>
-              <button class="accordion__option link-primary">Биссоло, Франческо</button>
-              <button class="accordion__option link-primary">Больтраффио, Джованни</button>
-              <button class="accordion__option link-primary">Бонсиньори, Франческо</button>
-              <button class="accordion__option link-primary">Боттичини, Рафаэлло</button>
-              <button class="accordion__option link-primary">Брамантино</button>
-              <button class="accordion__option link-primary">Бреа, Людовико</button>
-              <button class="accordion__option link-primary">Бьяджо д’Антонио Туччи</button>
-              <button class="accordion__option link-primary">Веккьетта</button>
-              <button class="accordion__option link-primary">Андреа Верроккьо</button>
-              <button class="accordion__option link-primary accordion__option--selected">Доменико Гирландайо</button>
-              <button class="accordion__option link-primary">Беноццо Гоццоли</button>
-              <button class="accordion__option link-primary">Граначчи, Франческо</button>
-              <button class="accordion__option link-primary">Грегорио ди Чекко</button>
-              <button class="accordion__option link-primary">Джованни да Удине</button>
-              <button class="accordion__option link-primary">Джованни ди Паоло</button>
-              <button class="accordion__option link-primary">Джорджоне</button>
-              <button class="accordion__option link-primary">Парентино, Бернардо</button>
-              <button class="accordion__option link-primary">Пезеллино</button>
-              <button class="accordion__option link-primary">Пьетро Перуджино</button>
-              <button class="accordion__option link-primary">Перуцци, Бальдассаре</button>
-              <button class="accordion__option link-primary">Пизанелло</button>
-              <button class="accordion__option link-primary">Пинтуриккьо</button>
+              <button class="accordion__option">Бенедетто ди Биндо</button>
+              <button class="accordion__option">Бергоньоне, Амброджо</button>
+              <button class="accordion__option">Биссоло, Франческо</button>
+              <button class="accordion__option">Больтраффио, Джованни</button>
+              <button class="accordion__option">Бонсиньори, Франческо</button>
+              <button class="accordion__option">Боттичини, Рафаэлло</button>
+              <button class="accordion__option">Брамантино</button>
+              <button class="accordion__option">Бреа, Людовико</button>
+              <button class="accordion__option">Бьяджо д’Антонио Туччи</button>
+              <button class="accordion__option">Веккьетта</button>
+              <button class="accordion__option">Андреа Верроккьо</button>
+              <button class="accordion__option accordion__option--selected">Доменико Гирландайо</button>
+              <button class="accordion__option">Беноццо Гоццоли</button>
+              <button class="accordion__option">Граначчи, Франческо</button>
+              <button class="accordion__option">Грегорио ди Чекко</button>
+              <button class="accordion__option">Джованни да Удине</button>
+              <button class="accordion__option">Джованни ди Паоло</button>
+              <button class="accordion__option">Джорджоне</button>
+              <button class="accordion__option">Парентино, Бернардо</button>
+              <button class="accordion__option">Пезеллино</button>
+              <button class="accordion__option">Пьетро Перуджино</button>
+              <button class="accordion__option">Перуцци, Бальдассаре</button>
+              <button class="accordion__option">Пизанелло</button>
+              <button class="accordion__option">Пинтуриккьо</button>
             </div>
           </div>
         </li>
-
-        <!-- 2 -->
         <li class="accordion__item">
-          <button class="accordion__btn">C 1500 по 1599 гг.</button>
+          <button class="accordion__btn">
+            <span class="accordion__title">C 1500 по 1599 гг.</span>
+            <span class="accordion__icon"></span>
+          </button>
+          <div class="accordion__body">
+            <div class="accordion__body-content placeholder">
+              <span class="placeholder__word">sit</span>
+              <span class="placeholder__word">amet</span>
+              <span class="placeholder__word">consectetur</span>
+              <span class="placeholder__word">adipisicing</span>
+              <span class="placeholder__word">Lorem</span>
+              <span class="placeholder__word">ipsum</span>
+              <span class="placeholder__word">dolor</span>
+              <span class="placeholder__word">elit</span>
+              <span class="placeholder__word">Commodi</span>
+              <span class="placeholder__word">consequuntur</span>
+              <span class="placeholder__word">eveniet</span>
+              <span class="placeholder__word">illo</span>
+              <span class="placeholder__word">Lorem</span>
+              <span class="placeholder__word">ipsum</span>
+              <span class="placeholder__word">dolor</span>
+              <span class="placeholder__word">sit</span>
+              <span class="placeholder__word">amet</span>
+              <span class="placeholder__word">consectetur</span>
+              <span class="placeholder__word">adipisicing</span>
+              <span class="placeholder__word">elit</span>
+              <span class="placeholder__word">Commodi</span>
+              <span class="placeholder__word">consequuntur</span>
+              <span class="placeholder__word">sapiente</span>
+            </div>
+          </div>
+        </li>
+        <li class="accordion__item">
+          <button class="accordion__btn">
+            <span class="accordion__title">C 1600 по 1699 гг.</span>
+            <span class="accordion__icon"></span>
+          </button>
           <div class="accordion__body">
             <div class="accordion__body-content placeholder">
               <span class="placeholder__word">Lorem</span>
@@ -487,10 +524,11 @@
             </div>
           </div>
         </li>
-
-        <!-- 3 -->
         <li class="accordion__item">
-          <button class="accordion__btn">C 1600 по 1699 гг.</button>
+          <button class="accordion__btn">
+            <span class="accordion__title">C 1700 по 1799 гг.</span>
+            <span class="accordion__icon"></span>
+          </button>
           <div class="accordion__body">
             <div class="accordion__body-content placeholder">
               <span class="placeholder__word">Lorem</span>
@@ -517,10 +555,11 @@
             </div>
           </div>
         </li>
-
-        <!-- 4 -->
         <li class="accordion__item">
-          <button class="accordion__btn">C 1700 по 1799 гг.</button>
+          <button class="accordion__btn">
+            <span class="accordion__title">C 1800 по 1899 гг.</span>
+            <span class="accordion__icon"></span>
+          </button>
           <div class="accordion__body">
             <div class="accordion__body-content placeholder">
               <span class="placeholder__word">Lorem</span>
@@ -547,10 +586,11 @@
             </div>
           </div>
         </li>
-
-        <!-- 5 -->
         <li class="accordion__item">
-          <button class="accordion__btn">C 1800 по 1899 гг.</button>
+          <button class="accordion__btn">
+            <span class="accordion__title">C 1900 по 1999 гг.</span>
+            <span class="accordion__icon"></span>
+          </button>
           <div class="accordion__body">
             <div class="accordion__body-content placeholder">
               <span class="placeholder__word">Lorem</span>
@@ -577,10 +617,11 @@
             </div>
           </div>
         </li>
-
-        <!-- 6 -->
         <li class="accordion__item">
-          <button class="accordion__btn">C 1900 по 1999 гг.</button>
+          <button class="accordion__btn">
+            <span class="accordion__title">C 2000 г.</span>
+            <span class="accordion__icon"></span>
+          </button>
           <div class="accordion__body">
             <div class="accordion__body-content placeholder">
               <span class="placeholder__word">Lorem</span>
@@ -607,37 +648,6 @@
             </div>
           </div>
         </li>
-
-        <!-- 7 -->
-        <li class="accordion__item">
-          <button class="accordion__btn">C 2000 г.</button>
-          <div class="accordion__body">
-            <div class="accordion__body-content placeholder">
-              <span class="placeholder__word">Lorem</span>
-              <span class="placeholder__word">ipsum</span>
-              <span class="placeholder__word">dolor</span>
-              <span class="placeholder__word">sit</span>
-              <span class="placeholder__word">amet</span>
-              <span class="placeholder__word">consectetur</span>
-              <span class="placeholder__word">adipisicing</span>
-              <span class="placeholder__word">elit</span>
-              <span class="placeholder__word">Commodi</span>
-              <span class="placeholder__word">consequuntur</span>
-              <span class="placeholder__word">eveniet</span>
-              <span class="placeholder__word">illo</span>
-              <span class="placeholder__word">iste</span>
-              <span class="placeholder__word">minus</span>
-              <span class="placeholder__word">nulla</span>
-              <span class="placeholder__word">porro</span>
-              <span class="placeholder__word">provident</span>
-              <span class="placeholder__word">quaerat</span>
-              <span class="placeholder__word">sapiente</span>
-              <span class="placeholder__word">velit</span>
-              <span class="placeholder__word">sapiente</span>
-            </div>
-          </div>
-        </li>
-
       </ul>
     </div>
 
